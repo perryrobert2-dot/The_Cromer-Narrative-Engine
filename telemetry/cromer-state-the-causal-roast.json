@@ -1,0 +1,1076 @@
+{
+  "state": {
+    "PHASE": "Rising Stakes",
+    "GENRE": "Sci-Fi Horror",
+    "INTENT": "Establish the mechanical weight of the world and the lethality of the flora.",
+    "AESTHETICS": {
+      "STYLE": "Gritty, mechanical, and high-stakes with a focus on tactile industrial processes.",
+      "VOICE": {
+        "primary": "Technical and Urgent",
+        "density": 0.8,
+        "metaphorFrequency": 0.4
+      }
+    },
+    "PHYSICS": {
+      "causal_debt": 5.6596,
+      "viscosity": 0.5,
+      "progression": 0.2916,
+      "causal_debt_ledger": 0,
+      "manifold_tension": 1,
+      "audit_error": 0.916809,
+      "chrome_stability": 0.8988,
+      "network_intrusion": 0.085,
+      "corporate_heat": 0.2783,
+      "street_cred": 0.0741,
+      "hull_integrity": 0.4274,
+      "fuel_reserves": 0.6125,
+      "sector_tension": 0.8282,
+      "mana": 0.9535,
+      "system_tier": 0.7603,
+      "narrative_credit": 1
+    },
+    "GRAPH": {
+      "nodes": [
+        {
+          "id": "Refined_Mana_Slag",
+          "type": "Item",
+          "description": "A dense, iridescent crystalline mass. It emits a low-frequency hum and possesses a high caloric density, capable of warping local gravity by 0.02g.",
+          "weight": 0.472
+        },
+        {
+          "id": "Patrolling_System_Entity",
+          "type": "Threat",
+          "description": "A high-tier surveillance construct hovering above the Cromer heights, scanning for temporal irregularities.",
+          "weight": 0.528
+        }
+      ],
+      "edges": [
+        {
+          "source": "Refined_Mana_Slag",
+          "target": "Patrolling_System_Entity",
+          "relation": "attracts",
+          "weight": 0.9,
+          "directional": true
+        }
+      ]
+    },
+    "ACTIVE_PINS": [
+      "Refined Mana-Slag",
+      "Giesen W6 Roaster",
+      "Ruptured Exhaust Flue",
+      "Cracked Foundation",
+      "Patrolling System Entity"
+    ],
+    "NARRATIVE_DEBT": [
+      "Origin of the 1200 Causal Debt",
+      "The specific nature of the Cromer blight",
+      "The identity of the debt collectors"
+    ],
+    "GAME_LOG": [
+      {
+        "id": "32d2c685-1787-44ae-8faf-32c5e12883a1",
+        "type": "milestone",
+        "message": "MILESTONE REACHED: 20% Progression (+1 Credit)",
+        "timestamp": 1773134505314
+      }
+    ],
+    "AUDIT_LOG": [],
+    "CURRENT_GOAL": "Extract the refined mana-slag and evade the patrolling System entity.",
+    "GRAND_OBJECTIVE": "Zero out the Causal Ledger to prevent the total erasure of Cromer from the timeline.",
+    "INTENSITY": 7.8692,
+    "BANNED_TERMS": [],
+    "SIGNIFICANCE_MAP": {
+      "The Giesen W6 Roaster": 3,
+      "Giesen W6 Roaster": 4
+    },
+    "CAUSAL_DEBT_LEDGER": 0,
+    "TITLE": "The Causal Roast",
+    "LOGLINE": "An artisanal roaster in a blighted coastal town must process volatile, mutated vegetation through a specialized machine to settle a massive temporal deficit before his existence is liquidated.",
+    "WORLD_LOGIC": "Time is a physical resource that can be spent or owed. In the town of Cromer, reality is fraying, causing the local flora to evolve into hyper-active, non-linear organisms that hold high caloric and causal value when processed correctly.",
+    "PILLARS": [
+      "Temporal Economics",
+      "Industrial Cosmic Horror",
+      "Botanical Mutation"
+    ],
+    "AXIOMS": {
+      "currency": "Mana",
+      "friction": "System Tier",
+      "penalty": "Causal Debt",
+      "recoveryRate": 0.2,
+      "isTransactional": true
+    },
+    "GENETIC_ANCHOR": "{\"PHASE\":\"Introduction\",\"GENRE\":\"Sci-Fi Horror\",\"INTENT\":\"Establish the mechanical weight of the world and the lethality of the flora.\",\"CURRENT_GOAL\":\"Complete the first batch of Cromer Flora to reduce the initial debt.\",\"INTENSITY\":7,\"AESTHETICS\":{\"STYLE\":\"Industrial Decadence\",\"VOICE\":{\"density\":0.8,\"metaphorFrequency\":0.4,\"primary\":\"Technical and Urgent\"}},\"PHYSICS\":{}}",
+    "BANNED_TERMS_VIOLATED": false
+  },
+  "segments": [
+    {
+      "id": "1773134336294-user",
+      "role": "user",
+      "text": "Active Pins: The Giesen W6 Roaster, 1200 Causal Debt, Mutated Cromer Flora",
+      "timestamp": 1773134336294
+    },
+    {
+      "id": "1773134348307-bot",
+      "role": "model",
+      "text": "The Giesen W6 roared, a low-frequency rumble that vibrated through the floorboards of the shack. Its heavy cast-iron drum spun with a rhythmic clatter, the cooling tray empty and waiting. This wasn't a standard batch. The hopper was filled with Cromer marsh-reeds—thick, translucent stalks that throbbed with a rhythmic, sickly light. They didn't sit still; they coiled around one another like starving eels. On the wall, the Causal Ledger’s needle sat firmly at 1200, the brass housing vibrating with the threat of a total reset. Every second the burner remained unlit, the air grew thinner, the edges of the room blurring into a gray nothingness. The debt was due. If the heat didn't strip the temporal volatility from the plants in the next ten minutes, there wouldn't be a workshop left to stand in. The protagonist gripped the gas valve, knuckles white, and turned. The blue flame hissed to life, reflecting in the glass portal of the drum where the vegetation began to char, releasing a thick, oily vapor that clung to the ceiling.",
+      "state": {
+        "PHASE": "Introduction",
+        "GENRE": "Sci-Fi Horror",
+        "INTENT": "Establish the mechanical weight of the world and the lethality of the flora.",
+        "AESTHETICS": {
+          "STYLE": "Gritty, mechanical, and high-stakes with a focus on tactile industrial processes.",
+          "VOICE": {
+            "density": 0.8,
+            "metaphorFrequency": 0.4,
+            "primary": "Technical and Urgent"
+          }
+        },
+        "PHYSICS": {
+          "causal_debt": 0,
+          "viscosity": 0.5,
+          "progression": 0,
+          "causal_debt_ledger": 0,
+          "manifold_tension": 0,
+          "audit_error": 0
+        },
+        "GRAPH": {
+          "nodes": [],
+          "edges": []
+        },
+        "ACTIVE_PINS": [
+          "The Giesen W6 Roaster",
+          "1200 Causal Debt",
+          "Mutated Cromer Flora"
+        ],
+        "NARRATIVE_DEBT": [
+          "Origin of the 1200 Causal Debt",
+          "The specific nature of the Cromer blight",
+          "The identity of the debt collectors"
+        ],
+        "GAME_LOG": [],
+        "AUDIT_LOG": [],
+        "CURRENT_GOAL": "Complete the first batch of Cromer Flora to reduce the initial debt.",
+        "GRAND_OBJECTIVE": "Zero out the Causal Ledger to prevent the total erasure of Cromer from the timeline.",
+        "INTENSITY": 7,
+        "BANNED_TERMS": [],
+        "SIGNIFICANCE_MAP": {},
+        "CAUSAL_DEBT_LEDGER": 0,
+        "TITLE": "The Causal Roast",
+        "LOGLINE": "An artisanal roaster in a blighted coastal town must process volatile, mutated vegetation through a specialized machine to settle a massive temporal deficit before his existence is liquidated.",
+        "WORLD_LOGIC": "Time is a physical resource that can be spent or owed. In the town of Cromer, reality is fraying, causing the local flora to evolve into hyper-active, non-linear organisms that hold high caloric and causal value when processed correctly.",
+        "PILLARS": [
+          "Temporal Economics",
+          "Industrial Cosmic Horror",
+          "Botanical Mutation"
+        ],
+        "AXIOMS": {
+          "currency": "Mana",
+          "friction": "System Tier",
+          "penalty": "Causal Debt",
+          "recoveryRate": 0.2,
+          "isTransactional": true
+        },
+        "GENETIC_ANCHOR": "{\"PHASE\":\"Introduction\",\"GENRE\":\"Sci-Fi Horror\",\"INTENT\":\"Establish the mechanical weight of the world and the lethality of the flora.\",\"CURRENT_GOAL\":\"Complete the first batch of Cromer Flora to reduce the initial debt.\",\"INTENSITY\":7,\"AESTHETICS\":{\"STYLE\":\"Industrial Decadence\",\"VOICE\":{\"density\":0.8,\"metaphorFrequency\":0.4,\"primary\":\"Technical and Urgent\"}},\"PHYSICS\":{}}"
+      },
+      "blueprint": {
+        "title": "The Causal Roast",
+        "logline": "An artisanal roaster in a blighted coastal town must process volatile, mutated vegetation through a specialized machine to settle a massive temporal deficit before his existence is liquidated.",
+        "pillars": [
+          "Temporal Economics",
+          "Industrial Cosmic Horror",
+          "Botanical Mutation"
+        ],
+        "world_logic": "Time is a physical resource that can be spent or owed. In the town of Cromer, reality is fraying, causing the local flora to evolve into hyper-active, non-linear organisms that hold high caloric and causal value when processed correctly.",
+        "tone_style": "Gritty, mechanical, and high-stakes with a focus on tactile industrial processes.",
+        "active_pins": [
+          "The Giesen W6 Roaster",
+          "1200 Causal Debt",
+          "Mutated Cromer Flora"
+        ],
+        "narrative_debt": [
+          "Origin of the 1200 Causal Debt",
+          "The specific nature of the Cromer blight",
+          "The identity of the debt collectors"
+        ],
+        "grand_objective": "Zero out the Causal Ledger to prevent the total erasure of Cromer from the timeline.",
+        "axioms": {
+          "currency": "Causal Credit",
+          "friction": "Temporal Drift",
+          "isTransactional": true,
+          "penalty": "Timeline Liquidation",
+          "recoveryRate": 0.05,
+          "secondaryCurrency": "Flora Mass"
+        },
+        "inciting_incident": "The Ledger manifested a red-ink balance of 1200, triggering the immediate activation of the Giesen W6 for emergency processing.",
+        "protagonist_conflict": "The protagonist must balance the physical danger of handling mutated flora with the precision required to operate the roaster under extreme temporal pressure."
+      },
+      "usage": {
+        "input": 440,
+        "output": 833,
+        "total": 1941
+      },
+      "timestamp": 1773134348307
+    },
+    {
+      "id": "1773134373671-user",
+      "role": "user",
+      "text": "The adrenaline of surviving the fall wears off. The System begins to extract interest on the 1200 Causal Debt by drastically increasing the local reality 'viscosity'. The air in the roasting shed becomes thick and heavy.\nDirective: Describe the physical toll of this high-viscosity environment on Arthur. He must push through the resistance to inspect the mutated local flora that has breached the shed's corrugated iron. Ensure the prose reflects a high-tension, Noir-style atmosphere mixed with LitRPG system prompts calculating the ambient mana density.",
+      "timestamp": 1773134373671
+    },
+    {
+      "id": "1773134386381-bot",
+      "role": "model",
+      "text": "Arthur’s lungs strained against the sudden thickening of the atmosphere. The 1200 Causal Debt pulsed from the Ledger, turning the oxygen into a heavy, syrupy sludge. Every movement required a calculated exertion of force. Raising an arm felt like dragging a limb through wet cement. The Giesen’s drum struggled, the belt screeching as the reality viscosity climbed to 0.5. The machine's internal Mana levels spiked, hitting 85—a critical density that threatened to crack the cast-iron housing from the inside out. \n\nThrough the haze, the sound of tearing metal shrieked over the roaster’s mechanical groan. To the left, a section of the corrugated iron wall buckled. A cluster of mutated Cromer marsh-reeds had found a breach. These weren't the limp stalks of the marshes; these were hyper-evolved, non-linear predators. They forced their way through the gap, their translucent skins hardening into jagged, obsidian-sharp edges as they reacted to the heat. The vines didn't just grow; they flickered, appearing three inches forward and then snapping back, occupying multiple temporal coordinates at once. \n\nArthur lunged for the sampling trowel. His boots skidded on the oily floor, the friction coefficient plummeting as the system tier rose. He reached the breach just as a vine lashed out, seeking the heat of the Giesen. The plant’s movement was a blur of frame-skipping motion. He swung the heavy iron tool, the weight of the implement amplified by the crushing debt. The edge of the trowel sheared through a pulsing reed, releasing a spray of high-calorie sap that hissed against the floorboards. \n\nThe Ledger’s needle twitched. The debt remained a stagnant 1200, but the Mana density in the shed was approaching the flashpoint. Arthur shoved a handful of the severed, twitching flora into the roaster’s intake. The machine bucked, its Hull Integrity dropping to 0.85 as it fought to process the chronal mass. Inside the drum, the blue flames turned a violent, screaming white. The viscosity in the room eased for a fraction of a second as the roaster began to chew through the debt. \n\nArthur jammed his shoulder against the corrugated iron breach, the metal cold and sharp against his coat. He needed to seal the gap before the rest of the marsh-reeds realized the furnace was open. He reached for the welding torch.",
+      "state": {
+        "PHASE": "Rising Stakes",
+        "GENRE": "Sci-Fi Horror",
+        "INTENT": "Establish the mechanical weight of the world and the lethality of the flora.",
+        "AESTHETICS": {
+          "STYLE": "Gritty, mechanical, and high-stakes with a focus on tactile industrial processes.",
+          "VOICE": {
+            "primary": "Technical and Urgent",
+            "density": 0.8,
+            "metaphorFrequency": 0.4
+          }
+        },
+        "PHYSICS": {
+          "causal_debt": 1200.0828,
+          "viscosity": 0.5,
+          "progression": 0.0625,
+          "causal_debt_ledger": 0,
+          "manifold_tension": 1,
+          "audit_error": 0.628117,
+          "chrome_stability": 0.95,
+          "network_intrusion": 0,
+          "corporate_heat": 0.1,
+          "street_cred": 0.05,
+          "hull_integrity": 0.85,
+          "fuel_reserves": 0.7,
+          "sector_tension": 0.4,
+          "mana": 85,
+          "system_tier": 0.55
+        },
+        "GRAPH": {
+          "nodes": [
+            {
+              "id": "Giesen_W6",
+              "type": "Industrial Equipment",
+              "description": "Heavy cast-iron drum roaster, currently under extreme thermal load.",
+              "weight": 0.348
+            },
+            {
+              "id": "Cromer_Flora",
+              "type": "Biological Hazard",
+              "description": "Translucent, coiling marsh-reeds with high temporal volatility.",
+              "weight": 0.391
+            },
+            {
+              "id": "Corrugated_Iron_Breach",
+              "type": "Environmental Hazard",
+              "description": "A jagged tear in the shed wall where the flora has physically intruded.",
+              "weight": 0.261
+            }
+          ],
+          "edges": [
+            {
+              "source": "Giesen_W6",
+              "target": "Cromer_Flora",
+              "relation": "Thermal Processing",
+              "weight": 0.9,
+              "directional": true
+            },
+            {
+              "source": "Corrugated_Iron_Breach",
+              "target": "Cromer_Flora",
+              "relation": "Entry Point",
+              "weight": 0.5,
+              "directional": false
+            }
+          ]
+        },
+        "ACTIVE_PINS": [
+          "The Giesen W6 Roaster",
+          "1200 Causal Debt",
+          "Mutated Cromer Flora",
+          "Corrugated Iron Breach"
+        ],
+        "NARRATIVE_DEBT": [
+          "Origin of the 1200 Causal Debt",
+          "The specific nature of the Cromer blight",
+          "The identity of the debt collectors"
+        ],
+        "GAME_LOG": [],
+        "AUDIT_LOG": [],
+        "CURRENT_GOAL": "Process the Mutated Cromer Flora to reduce Causal Debt.",
+        "GRAND_OBJECTIVE": "Zero out the Causal Ledger to prevent the total erasure of Cromer from the timeline.",
+        "INTENSITY": 7.625,
+        "BANNED_TERMS": [],
+        "SIGNIFICANCE_MAP": {
+          "The Giesen W6 Roaster": 1
+        },
+        "CAUSAL_DEBT_LEDGER": 0,
+        "TITLE": "The Causal Roast",
+        "LOGLINE": "An artisanal roaster in a blighted coastal town must process volatile, mutated vegetation through a specialized machine to settle a massive temporal deficit before his existence is liquidated.",
+        "WORLD_LOGIC": "Time is a physical resource that can be spent or owed. In the town of Cromer, reality is fraying, causing the local flora to evolve into hyper-active, non-linear organisms that hold high caloric and causal value when processed correctly.",
+        "PILLARS": [
+          "Temporal Economics",
+          "Industrial Cosmic Horror",
+          "Botanical Mutation"
+        ],
+        "AXIOMS": {
+          "currency": "Mana",
+          "friction": "System Tier",
+          "penalty": "Causal Debt",
+          "recoveryRate": 0.2,
+          "isTransactional": true
+        },
+        "GENETIC_ANCHOR": "{\"PHASE\":\"Introduction\",\"GENRE\":\"Sci-Fi Horror\",\"INTENT\":\"Establish the mechanical weight of the world and the lethality of the flora.\",\"CURRENT_GOAL\":\"Complete the first batch of Cromer Flora to reduce the initial debt.\",\"INTENSITY\":7,\"AESTHETICS\":{\"STYLE\":\"Industrial Decadence\",\"VOICE\":{\"density\":0.8,\"metaphorFrequency\":0.4,\"primary\":\"Technical and Urgent\"}},\"PHYSICS\":{}}",
+        "BANNED_TERMS_VIOLATED": false
+      },
+      "usage": {
+        "input": 1854,
+        "output": 518,
+        "total": 2372
+      },
+      "timestamp": 1773134386381
+    },
+    {
+      "id": "1773134408686-user",
+      "role": "user",
+      "text": "Arthur realizes that engaging the mutated fauna (like the scrub turkey) carries too much physical risk and ethical friction. Instead, he relies on his background in botany. He identifies a highly mutated, mana-dense strain of coastal banksia that has aggressively taken root in his driveway.\nDirective: Describe the meticulous, high-stakes process of harvesting the silica-laced banksia cones. Treat the plant life with the precise, clinical observation of a field study. Update the System inventory to reflect the new 'accumulated_biomass' and show a slight increase in 'progression'.",
+      "timestamp": 1773134408686
+    },
+    {
+      "id": "1773134416105-bot",
+      "role": "model",
+      "text": "",
+      "state": {
+        "PHASE": "Rising Stakes",
+        "GENRE": "Sci-Fi Horror",
+        "INTENT": "Establish the mechanical weight of the world and the lethality of the flora.",
+        "AESTHETICS": {
+          "STYLE": "Gritty, mechanical, and high-stakes with a focus on tactile industrial processes.",
+          "VOICE": {
+            "primary": "Technical and Urgent",
+            "density": 0.8,
+            "metaphorFrequency": 0.4
+          }
+        },
+        "PHYSICS": {
+          "causal_debt": 1195.5242,
+          "viscosity": 0.5,
+          "progression": 0.103,
+          "causal_debt_ledger": 0,
+          "manifold_tension": 1,
+          "audit_error": 0.659295,
+          "chrome_stability": 0.95,
+          "network_intrusion": 0,
+          "corporate_heat": 0.1405,
+          "street_cred": 0.05,
+          "hull_integrity": 0.8095,
+          "fuel_reserves": 0.7405,
+          "sector_tension": 0.4405,
+          "mana": 1,
+          "system_tier": 0.5905
+        },
+        "GRAPH": {
+          "nodes": [
+            {
+              "id": "Giesen_W6",
+              "type": "Machine",
+              "description": "Industrial roaster currently processing temporal flora to offset debt.",
+              "weight": 0.309
+            },
+            {
+              "id": "Cromer_Flora",
+              "type": "Biological",
+              "description": "Hyper-active, non-linear organisms with high caloric value.",
+              "weight": 0.327
+            },
+            {
+              "id": "Corrugated_Iron_Breach",
+              "type": "Location",
+              "description": "Structural failure point in the shed wall.",
+              "weight": 0.145
+            },
+            {
+              "id": "Silica_Laced_Banksia",
+              "type": "Resource",
+              "description": "Mana-dense botanical strain found in the driveway.",
+              "weight": 0.218
+            }
+          ],
+          "edges": [
+            {
+              "source": "Giesen_W6",
+              "target": "Cromer_Flora",
+              "relation": "processes",
+              "weight": 0.9,
+              "directional": true
+            },
+            {
+              "source": "Silica_Laced_Banksia",
+              "target": "Giesen_W6",
+              "relation": "fuel_source",
+              "weight": 0.7,
+              "directional": true
+            }
+          ]
+        },
+        "ACTIVE_PINS": [
+          "The Giesen W6 Roaster",
+          "1200 Causal Debt",
+          "Mutated Cromer Flora",
+          "Corrugated Iron Breach",
+          "Silica-laced Banksia Cones"
+        ],
+        "NARRATIVE_DEBT": [
+          "Origin of the 1200 Causal Debt",
+          "The specific nature of the Cromer blight",
+          "The identity of the debt collectors"
+        ],
+        "GAME_LOG": [],
+        "AUDIT_LOG": [],
+        "CURRENT_GOAL": "Harvest silica-laced banksia cones to mitigate Causal Debt",
+        "GRAND_OBJECTIVE": "Zero out the Causal Ledger to prevent the total erasure of Cromer from the timeline.",
+        "INTENSITY": 7.6512,
+        "BANNED_TERMS": [],
+        "SIGNIFICANCE_MAP": {
+          "The Giesen W6 Roaster": 2
+        },
+        "CAUSAL_DEBT_LEDGER": 0,
+        "TITLE": "The Causal Roast",
+        "LOGLINE": "An artisanal roaster in a blighted coastal town must process volatile, mutated vegetation through a specialized machine to settle a massive temporal deficit before his existence is liquidated.",
+        "WORLD_LOGIC": "Time is a physical resource that can be spent or owed. In the town of Cromer, reality is fraying, causing the local flora to evolve into hyper-active, non-linear organisms that hold high caloric and causal value when processed correctly.",
+        "PILLARS": [
+          "Temporal Economics",
+          "Industrial Cosmic Horror",
+          "Botanical Mutation"
+        ],
+        "AXIOMS": {
+          "currency": "Mana",
+          "friction": "System Tier",
+          "penalty": "Causal Debt",
+          "recoveryRate": 0.2,
+          "isTransactional": true
+        },
+        "GENETIC_ANCHOR": "{\"PHASE\":\"Introduction\",\"GENRE\":\"Sci-Fi Horror\",\"INTENT\":\"Establish the mechanical weight of the world and the lethality of the flora.\",\"CURRENT_GOAL\":\"Complete the first batch of Cromer Flora to reduce the initial debt.\",\"INTENSITY\":7,\"AESTHETICS\":{\"STYLE\":\"Industrial Decadence\",\"VOICE\":{\"density\":0.8,\"metaphorFrequency\":0.4,\"primary\":\"Technical and Urgent\"}},\"PHYSICS\":{}}",
+        "BANNED_TERMS_VIOLATED": false
+      },
+      "usage": {
+        "input": 2688,
+        "output": 0,
+        "total": 2688
+      },
+      "timestamp": 1773134416105
+    },
+    {
+      "id": "1773134444503-bot",
+      "role": "model",
+      "text": "Arthur stepped into the driveway, his boots sinking into gravel that felt like wet mortar. The air resistance had peaked; every forward lunge required a specific caloric expenditure. In the center of the path, the *Banksia serrata* had undergone a radical phase shift. Its woody follicles were no longer organic tissue but were encrusted with jagged, semi-translucent silica deposits that pulsed with a dull, internal luminescence. The mana density here was a physical weight, pressing the gravel into the earth and distorting the light around the plant’s perimeter.\n\nHe knelt, his joints grinding against the atmospheric pressure. He ignored the scrub turkey watching from the fence line—its temporal wake was too erratic to engage without a significant causal penalty. Instead, he focused on the primary objective. He withdrew a pair of titanium-bypass loppers. The banksia’s bark had transitioned into a composite of cellulose and raw mineral, a biological armor designed to anchor itself against the fraying timeline.\n\nArthur positioned the blades at the base of a primary cluster. He squeezed. The silica-laced wood shrieked, a sound like a diamond-tipped saw hitting a concrete slab. The resistance was immense, the high-viscosity reality fighting the severance of such a dense causal anchor. He threw his weight into the handles, his muscles knotting under the strain. The branch snapped with a sharp, metallic crack. \n\nHe moved with clinical efficiency, harvesting the cones in a rhythmic, mechanical pattern. Each unit was a heavy, cold mass in his gloved hands, vibrating with unspent chronal potential. He stripped six clusters, the accumulated biomass filling his reinforced collection crate. With every severed cone, the static in his peripheral vision cleared by a fraction of a percent. The progression toward the next stabilization threshold moved forward as the raw biological mass was secured and cataloged. \n\nHe stood, lungs burning from the effort of breathing the thickened oxygen. The crate was full, the silica-laced cones clinking like shards of glass. He turned back toward the shed, the weight of the harvest dragging his shoulders down as the Ledger continued its silent, relentless audit. He kicked the shed door open with the heel of his boot.",
+      "state": {
+        "PHASE": "Rising Stakes",
+        "GENRE": "Sci-Fi Horror",
+        "INTENT": "Establish the mechanical weight of the world and the lethality of the flora.",
+        "AESTHETICS": {
+          "STYLE": "Gritty, mechanical, and high-stakes with a focus on tactile industrial processes.",
+          "VOICE": {
+            "primary": "Technical and Urgent",
+            "density": 0.8,
+            "metaphorFrequency": 0.4
+          }
+        },
+        "PHYSICS": {
+          "causal_debt": 1195.548,
+          "viscosity": 0.5,
+          "progression": 0.1334,
+          "causal_debt_ledger": 0,
+          "manifold_tension": 1,
+          "audit_error": 0.679229,
+          "chrome_stability": 0.95,
+          "network_intrusion": 0,
+          "corporate_heat": 0.1405,
+          "street_cred": 0.05,
+          "hull_integrity": 0.8095,
+          "fuel_reserves": 0.7405,
+          "sector_tension": 0.4405,
+          "mana": 0.9696,
+          "system_tier": 0.6209
+        },
+        "GRAPH": {
+          "nodes": [
+            {
+              "id": "Silica_Laced_Banksia",
+              "type": "Flora",
+              "description": "Mutated coastal banksia with silica-reinforced scales and high mana density.",
+              "weight": 0.68
+            },
+            {
+              "id": "Accumulated_Biomass",
+              "type": "Inventory",
+              "description": "Raw, high-calorie botanical matter harvested for processing.",
+              "weight": 0.32
+            }
+          ],
+          "edges": [
+            {
+              "source": "Silica_Laced_Banksia",
+              "target": "Accumulated_Biomass",
+              "relation": "harvested_from",
+              "weight": 0.9,
+              "directional": true
+            }
+          ]
+        },
+        "ACTIVE_PINS": [
+          "Giesen W6 Roaster",
+          "1200 Causal Debt",
+          "Silica-laced Banksia Cones",
+          "Accumulated Biomass"
+        ],
+        "NARRATIVE_DEBT": [
+          "Origin of the 1200 Causal Debt",
+          "The specific nature of the Cromer blight",
+          "The identity of the debt collectors"
+        ],
+        "GAME_LOG": [],
+        "AUDIT_LOG": [],
+        "CURRENT_GOAL": "Harvest silica-laced banksia cones to reduce Causal Debt.",
+        "GRAND_OBJECTIVE": "Zero out the Causal Ledger to prevent the total erasure of Cromer from the timeline.",
+        "INTENSITY": 7.666,
+        "BANNED_TERMS": [],
+        "SIGNIFICANCE_MAP": {
+          "The Giesen W6 Roaster": 3
+        },
+        "CAUSAL_DEBT_LEDGER": 0,
+        "TITLE": "The Causal Roast",
+        "LOGLINE": "An artisanal roaster in a blighted coastal town must process volatile, mutated vegetation through a specialized machine to settle a massive temporal deficit before his existence is liquidated.",
+        "WORLD_LOGIC": "Time is a physical resource that can be spent or owed. In the town of Cromer, reality is fraying, causing the local flora to evolve into hyper-active, non-linear organisms that hold high caloric and causal value when processed correctly.",
+        "PILLARS": [
+          "Temporal Economics",
+          "Industrial Cosmic Horror",
+          "Botanical Mutation"
+        ],
+        "AXIOMS": {
+          "currency": "Mana",
+          "friction": "System Tier",
+          "penalty": "Causal Debt",
+          "recoveryRate": 0.2,
+          "isTransactional": true
+        },
+        "GENETIC_ANCHOR": "{\"PHASE\":\"Introduction\",\"GENRE\":\"Sci-Fi Horror\",\"INTENT\":\"Establish the mechanical weight of the world and the lethality of the flora.\",\"CURRENT_GOAL\":\"Complete the first batch of Cromer Flora to reduce the initial debt.\",\"INTENSITY\":7,\"AESTHETICS\":{\"STYLE\":\"Industrial Decadence\",\"VOICE\":{\"density\":0.8,\"metaphorFrequency\":0.4,\"primary\":\"Technical and Urgent\"}},\"PHYSICS\":{}}",
+        "BANNED_TERMS_VIOLATED": false
+      },
+      "usage": {
+        "input": 2659,
+        "output": 450,
+        "total": 4248
+      },
+      "timestamp": 1773134444503
+    },
+    {
+      "id": "1773134469948-user",
+      "role": "user",
+      "text": "Arthur loads the harvested mutated banksia cones into the Giesen W6. He attempts to roast them using a modified profile to extract their latent mana, acting as an improvisational alchemist.\nDirective: The roasting process causes a severe localized System Anomaly. The shed sustains heavy structural destruction (e.g., a ruptured exhaust flue or cracked foundations) as the mana violently off-gasses. Use this structural loss to explicitly amortize and pay down a significant portion of Arthur's Causal Debt.",
+      "timestamp": 1773134469948
+    },
+    {
+      "id": "1773134480114-bot",
+      "role": "model",
+      "text": "",
+      "state": {
+        "PHASE": "Rising Stakes",
+        "GENRE": "Sci-Fi Horror",
+        "INTENT": "Establish the mechanical weight of the world and the lethality of the flora.",
+        "AESTHETICS": {
+          "STYLE": "Gritty, mechanical, and high-stakes with a focus on tactile industrial processes.",
+          "VOICE": {
+            "primary": "Technical and Urgent",
+            "density": 0.8,
+            "metaphorFrequency": 0.4
+          }
+        },
+        "PHYSICS": {
+          "causal_debt": 1195.5718,
+          "viscosity": 0.5,
+          "progression": 0.1959,
+          "causal_debt_ledger": 0,
+          "manifold_tension": 1,
+          "audit_error": 0.75438,
+          "chrome_stability": 0.95,
+          "network_intrusion": 0,
+          "corporate_heat": 0.1405,
+          "street_cred": 0.05,
+          "hull_integrity": 0.8095,
+          "fuel_reserves": 0.7405,
+          "sector_tension": 0.4405,
+          "mana": 0.9696,
+          "system_tier": 0.6834
+        },
+        "GRAPH": {
+          "nodes": [
+            {
+              "id": "Silica_Laced_Banksia",
+              "type": "Flora",
+              "description": "Mutated coastal banksia with silica-encrusted follicles and high mana density.",
+              "weight": 0.19
+            },
+            {
+              "id": "Accumulated_Biomass",
+              "type": "Resource",
+              "description": "Six clusters of harvested, chronally-active banksia cones.",
+              "weight": 0.125
+            },
+            {
+              "id": "Giesen_W6_Roaster",
+              "type": "Equipment",
+              "description": "Industrial roasting unit, currently under extreme thermal and temporal stress.",
+              "weight": 0.685
+            }
+          ],
+          "edges": [
+            {
+              "source": "Accumulated_Biomass",
+              "target": "Giesen_W6_Roaster",
+              "relation": "fuel_source",
+              "weight": 5,
+              "directional": true
+            }
+          ]
+        },
+        "ACTIVE_PINS": [
+          "Giesen W6 Roaster",
+          "1200 Causal Debt",
+          "Silica-laced Banksia Cones",
+          "Accumulated Biomass"
+        ],
+        "NARRATIVE_DEBT": [
+          "Origin of the 1200 Causal Debt",
+          "The specific nature of the Cromer blight",
+          "The identity of the debt collectors"
+        ],
+        "GAME_LOG": [],
+        "AUDIT_LOG": [],
+        "CURRENT_GOAL": "Process silica-laced banksia cones in the Giesen W6 to pay down Causal Debt.",
+        "GRAND_OBJECTIVE": "Zero out the Causal Ledger to prevent the total erasure of Cromer from the timeline.",
+        "INTENSITY": 7.7285,
+        "BANNED_TERMS": [],
+        "SIGNIFICANCE_MAP": {
+          "The Giesen W6 Roaster": 3,
+          "Giesen W6 Roaster": 1
+        },
+        "CAUSAL_DEBT_LEDGER": 0,
+        "TITLE": "The Causal Roast",
+        "LOGLINE": "An artisanal roaster in a blighted coastal town must process volatile, mutated vegetation through a specialized machine to settle a massive temporal deficit before his existence is liquidated.",
+        "WORLD_LOGIC": "Time is a physical resource that can be spent or owed. In the town of Cromer, reality is fraying, causing the local flora to evolve into hyper-active, non-linear organisms that hold high caloric and causal value when processed correctly.",
+        "PILLARS": [
+          "Temporal Economics",
+          "Industrial Cosmic Horror",
+          "Botanical Mutation"
+        ],
+        "AXIOMS": {
+          "currency": "Mana",
+          "friction": "System Tier",
+          "penalty": "Causal Debt",
+          "recoveryRate": 0.2,
+          "isTransactional": true
+        },
+        "GENETIC_ANCHOR": "{\"PHASE\":\"Introduction\",\"GENRE\":\"Sci-Fi Horror\",\"INTENT\":\"Establish the mechanical weight of the world and the lethality of the flora.\",\"CURRENT_GOAL\":\"Complete the first batch of Cromer Flora to reduce the initial debt.\",\"INTENSITY\":7,\"AESTHETICS\":{\"STYLE\":\"Industrial Decadence\",\"VOICE\":{\"density\":0.8,\"metaphorFrequency\":0.4,\"primary\":\"Technical and Urgent\"}},\"PHYSICS\":{}}",
+        "BANNED_TERMS_VIOLATED": false
+      },
+      "usage": {
+        "input": 2968,
+        "output": 0,
+        "total": 2968
+      },
+      "timestamp": 1773134480114
+    },
+    {
+      "id": "1773134505314-bot",
+      "role": "model",
+      "text": "Arthur hoisted the collection crate, the silica-laced banksia cones rattling with the sound of grinding tectonic plates. He dumped the load into the hopper of the Giesen W6. The drum, modified with lead-lined baffles, protested as it began its slow, high-friction rotation. He ignited the burner. The gas ignited with a flat, matte-gray flare that consumed the shadows within the roasting chamber.\n\nHe monitored the thermal probe. The temperature did not climb linearly. It jumped in stuttering increments, mirroring the unstable chronal state of the biomass. At 180 degrees Celsius, the first crack occurred. It was not the sound of expanding cellular moisture; it was a spatial rupture within the drum.\n\nA wave of raw mana off-gassed from the exhaust, far exceeding the throughput capacity of the ventilation system. The Giesen’s manifold groaned under the sudden atmospheric shift. Arthur gripped the cooling tray handle, his boots sliding as the ground beneath him began to oscillate. The exhaust flue, a heavy-duty steel pipe, distorted. It turned translucent, then buckled outward, the metal stretching like soft wax before the seams split.\n\nThe shed’s concrete foundation shrieked. A fissure opened between Arthur’s feet, a jagged line that swallowed the ambient light. This was the mechanical reality of the audit. The ledger demanded parity, and the physical structure of the shed was the only available collateral. As the silica in the cones carbonized, releasing its stored temporal energy, the shed surrendered its integrity to balance the equation.\n\nThe roof joists groaned, timber splintering as nine hundred units of causal debt were amortized through immediate structural failure. The rear wall shifted three inches off its mounting bolts. The pressure in Arthur's inner ear vanished instantly as the ledger recalculated, the crushing weight of the debt lifting at the exact moment the shed’s primary support beam snapped.\n\nThe roaster’s motor seized. A final, violent discharge of ionized gas blew the inspection hatch across the room, where it embedded itself in the failing drywall. Arthur stood in the settling dust, his lungs straining against the ozone-free, particulate-heavy air. He looked down at the cooling tray. The banksia cones had been reduced to glowing, metallic slag. \n\nHe reached for the manual discharge lever.",
+      "state": {
+        "PHASE": "Rising Stakes",
+        "GENRE": "Sci-Fi Horror",
+        "INTENT": "Establish the mechanical weight of the world and the lethality of the flora.",
+        "AESTHETICS": {
+          "STYLE": "Gritty, mechanical, and high-stakes with a focus on tactile industrial processes.",
+          "VOICE": {
+            "primary": "Technical and Urgent",
+            "density": 0.8,
+            "metaphorFrequency": 0.4
+          }
+        },
+        "PHYSICS": {
+          "causal_debt": 995.5953,
+          "viscosity": 0.5,
+          "progression": 0.2364,
+          "causal_debt_ledger": 0,
+          "manifold_tension": 1,
+          "audit_error": 0.826624,
+          "chrome_stability": 0.9257,
+          "network_intrusion": 0.0405,
+          "corporate_heat": 0.1725,
+          "street_cred": 0.0581,
+          "hull_integrity": 0.6804,
+          "fuel_reserves": 0.7077,
+          "sector_tension": 0.4725,
+          "mana": 0.8971,
+          "system_tier": 0.713,
+          "narrative_credit": 1
+        },
+        "GRAPH": {
+          "nodes": [
+            {
+              "id": "Giesen_W6_Roaster",
+              "type": "Equipment",
+              "description": "Industrial roaster currently venting high-density mana; structural integrity compromised.",
+              "weight": 0.362
+            },
+            {
+              "id": "Silica_Laced_Banksia",
+              "type": "Resource",
+              "description": "Mutated botanical matter; high caloric and causal density.",
+              "weight": 0.255
+            },
+            {
+              "id": "Shed_Foundation",
+              "type": "Location",
+              "description": "Cracked concrete base; structural failure point.",
+              "weight": 0.383
+            },
+            {
+              "id": "Continue",
+              "type": "entity",
+              "description": "Auto-detected entity from input.",
+              "weight": 0.5,
+              "latent": false
+            }
+          ],
+          "edges": [
+            {
+              "source": "Giesen_W6_Roaster",
+              "target": "Shed_Foundation",
+              "relation": "Structural_Damage_Vector",
+              "weight": 0.95,
+              "directional": true
+            }
+          ]
+        },
+        "ACTIVE_PINS": [
+          "Giesen W6 Roaster",
+          "Silica-laced Banksia Cones",
+          "Accumulated Biomass",
+          "Ruptured Exhaust Flue"
+        ],
+        "NARRATIVE_DEBT": [
+          "Origin of the 1200 Causal Debt",
+          "The specific nature of the Cromer blight",
+          "The identity of the debt collectors"
+        ],
+        "GAME_LOG": [],
+        "AUDIT_LOG": [],
+        "CURRENT_GOAL": "Process harvested biomass to reduce Causal Debt via controlled structural failure.",
+        "GRAND_OBJECTIVE": "Zero out the Causal Ledger to prevent the total erasure of Cromer from the timeline.",
+        "INTENSITY": 7.7921,
+        "BANNED_TERMS": [],
+        "SIGNIFICANCE_MAP": {
+          "The Giesen W6 Roaster": 3,
+          "Giesen W6 Roaster": 2
+        },
+        "CAUSAL_DEBT_LEDGER": 0,
+        "TITLE": "The Causal Roast",
+        "LOGLINE": "An artisanal roaster in a blighted coastal town must process volatile, mutated vegetation through a specialized machine to settle a massive temporal deficit before his existence is liquidated.",
+        "WORLD_LOGIC": "Time is a physical resource that can be spent or owed. In the town of Cromer, reality is fraying, causing the local flora to evolve into hyper-active, non-linear organisms that hold high caloric and causal value when processed correctly.",
+        "PILLARS": [
+          "Temporal Economics",
+          "Industrial Cosmic Horror",
+          "Botanical Mutation"
+        ],
+        "AXIOMS": {
+          "currency": "Mana",
+          "friction": "System Tier",
+          "penalty": "Causal Debt",
+          "recoveryRate": 0.2,
+          "isTransactional": true
+        },
+        "GENETIC_ANCHOR": "{\"PHASE\":\"Introduction\",\"GENRE\":\"Sci-Fi Horror\",\"INTENT\":\"Establish the mechanical weight of the world and the lethality of the flora.\",\"CURRENT_GOAL\":\"Complete the first batch of Cromer Flora to reduce the initial debt.\",\"INTENSITY\":7,\"AESTHETICS\":{\"STYLE\":\"Industrial Decadence\",\"VOICE\":{\"density\":0.8,\"metaphorFrequency\":0.4,\"primary\":\"Technical and Urgent\"}},\"PHYSICS\":{}}",
+        "BANNED_TERMS_VIOLATED": false
+      },
+      "usage": {
+        "input": 2344,
+        "output": 475,
+        "total": 4004
+      },
+      "timestamp": 1773134505314
+    },
+    {
+      "id": "1773134527222-user",
+      "role": "user",
+      "text": "The cooling tray finishes cycling. The resulting compound is a success, but the noise and light from the anomaly have attracted unwanted attention from a higher-tier System entity patrolling the Cromer heights.\nDirective: Detail the physical properties of the newly synthesized botanical compound. Conclude the segment with the arrival of the new threat, setting the 'manifold_tension' to critical and establishing the hook for the next chapter.",
+      "timestamp": 1773134527222
+    },
+    {
+      "id": "1773134535037-bot",
+      "role": "model",
+      "text": "",
+      "state": {
+        "PHASE": "Rising Stakes",
+        "GENRE": "Sci-Fi Horror",
+        "INTENT": "Establish the mechanical weight of the world and the lethality of the flora.",
+        "AESTHETICS": {
+          "STYLE": "Gritty, mechanical, and high-stakes with a focus on tactile industrial processes.",
+          "VOICE": {
+            "primary": "Technical and Urgent",
+            "density": 0.8,
+            "metaphorFrequency": 0.4
+          }
+        },
+        "PHYSICS": {
+          "causal_debt": 95.6306,
+          "viscosity": 0.5,
+          "progression": 0.2668,
+          "causal_debt_ledger": 0,
+          "manifold_tension": 1,
+          "audit_error": 0.849865,
+          "chrome_stability": 0.9161,
+          "network_intrusion": 0.0463,
+          "corporate_heat": 0.2014,
+          "street_cred": 0.0593,
+          "hull_integrity": 0.5402,
+          "fuel_reserves": 0.6726,
+          "sector_tension": 0.7631,
+          "mana": 0.9232,
+          "system_tier": 0.7355,
+          "narrative_credit": 1
+        },
+        "GRAPH": {
+          "nodes": [
+            {
+              "id": "Giesen_W6_Roaster",
+              "type": "Equipment",
+              "description": "Heavily modified, currently seized and venting residual chronal energy.",
+              "weight": 0.25
+            },
+            {
+              "id": "Silica_Laced_Banksia_Slag",
+              "type": "Resource",
+              "description": "High-density mana-infused byproduct, volatile and glowing.",
+              "weight": 0.281
+            },
+            {
+              "id": "Shed_Foundation",
+              "type": "Location",
+              "description": "Structurally compromised, currently acting as a sacrificial anchor for debt.",
+              "weight": 0.156
+            },
+            {
+              "id": "System_Entity",
+              "type": "Threat",
+              "description": "A high-tier entity patrolling the Cromer heights, drawn by the anomaly.",
+              "weight": 0.313
+            },
+            {
+              "id": "cooling",
+              "type": "entity",
+              "description": "Auto-detected entity from input.",
+              "weight": 0.5,
+              "latent": false
+            }
+          ],
+          "edges": [
+            {
+              "source": "Giesen_W6_Roaster",
+              "target": "Silica_Laced_Banksia_Slag",
+              "relation": "Processed",
+              "weight": 0.7,
+              "directional": true
+            },
+            {
+              "source": "Shed_Foundation",
+              "target": "Giesen_W6_Roaster",
+              "relation": "Supports",
+              "weight": 0.4,
+              "directional": false
+            },
+            {
+              "source": "System_Entity",
+              "target": "Giesen_W6_Roaster",
+              "relation": "Tracking",
+              "weight": 0.9,
+              "directional": true
+            }
+          ]
+        },
+        "ACTIVE_PINS": [
+          "Giesen W6 Roaster",
+          "Silica-laced Banksia Slag",
+          "Ruptured Exhaust Flue",
+          "Cracked Foundation",
+          "Approaching System Entity"
+        ],
+        "NARRATIVE_DEBT": [
+          "Origin of the 1200 Causal Debt",
+          "The specific nature of the Cromer blight",
+          "The identity of the debt collectors"
+        ],
+        "GAME_LOG": [
+          {
+            "id": "32d2c685-1787-44ae-8faf-32c5e12883a1",
+            "type": "milestone",
+            "message": "MILESTONE REACHED: 20% Progression (+1 Credit)",
+            "timestamp": 1773134505314
+          }
+        ],
+        "AUDIT_LOG": [],
+        "CURRENT_GOAL": "Stabilize the synthesized compound and evade the approaching System entity.",
+        "GRAND_OBJECTIVE": "Zero out the Causal Ledger to prevent the total erasure of Cromer from the timeline.",
+        "INTENSITY": 7.8069,
+        "BANNED_TERMS": [],
+        "SIGNIFICANCE_MAP": {
+          "The Giesen W6 Roaster": 3,
+          "Giesen W6 Roaster": 3
+        },
+        "CAUSAL_DEBT_LEDGER": 0,
+        "TITLE": "The Causal Roast",
+        "LOGLINE": "An artisanal roaster in a blighted coastal town must process volatile, mutated vegetation through a specialized machine to settle a massive temporal deficit before his existence is liquidated.",
+        "WORLD_LOGIC": "Time is a physical resource that can be spent or owed. In the town of Cromer, reality is fraying, causing the local flora to evolve into hyper-active, non-linear organisms that hold high caloric and causal value when processed correctly.",
+        "PILLARS": [
+          "Temporal Economics",
+          "Industrial Cosmic Horror",
+          "Botanical Mutation"
+        ],
+        "AXIOMS": {
+          "currency": "Mana",
+          "friction": "System Tier",
+          "penalty": "Causal Debt",
+          "recoveryRate": 0.2,
+          "isTransactional": true
+        },
+        "GENETIC_ANCHOR": "{\"PHASE\":\"Introduction\",\"GENRE\":\"Sci-Fi Horror\",\"INTENT\":\"Establish the mechanical weight of the world and the lethality of the flora.\",\"CURRENT_GOAL\":\"Complete the first batch of Cromer Flora to reduce the initial debt.\",\"INTENSITY\":7,\"AESTHETICS\":{\"STYLE\":\"Industrial Decadence\",\"VOICE\":{\"density\":0.8,\"metaphorFrequency\":0.4,\"primary\":\"Technical and Urgent\"}},\"PHYSICS\":{}}",
+        "BANNED_TERMS_VIOLATED": false
+      },
+      "usage": {
+        "input": 2810,
+        "output": 0,
+        "total": 2810
+      },
+      "timestamp": 1773134535037
+    },
+    {
+      "id": "1773134567979-bot",
+      "role": "model",
+      "text": "Arthur forced the discharge lever downward. The internal gears, fouled by grit and carbonized plant matter, resisted before the hopper door snapped open. The refined mana-slag spilled onto the cooling tray with the heavy, non-Newtonian thud of liquid lead. It did not behave like organic debris; the compound consisted of hyper-dense, crystalline nodules that vibrated with a rhythmic, internal luminosity. Each grain functioned as a localized temporal loop, a microscopic engine of stored potential that blurred the edges of the tray with its high-frequency oscillation.\n\nHe reached for a lead-lined containment canister, but his forearm met a wall of invisible resistance. The manifold tension had spiked to a critical threshold, turning the ambient air into a pressurized, semi-solid medium. Every centimeter of movement was a calculated mechanical labor against the thickening atmosphere. Frost began to bloom across the Giesen’s steel chassis as the local thermal energy was cannibalized to maintain the spatial anomaly.\n\nA shadow without a source swept over the cooling tray. Above the shed’s ruined ceiling, the patrolling System entity transitioned into the local coordinate space. It was a silent, oscillating construct of black, non-reflective prisms and spinning brass armatures—a High-Tier Auditor from the Cromer heights. Its presence stripped the remaining structural logic from the environment; the mounting bolts in the floor unscrewed themselves, and the corrugated iron walls began to peel away like scorched paper.\n\nThe Auditor’s sensory apertures, cold and mechanically precise, swiveled in unison to lock onto the roaster. It emitted a low-frequency pulse that instantly neutralized the roar of the cooling fans, plunging the workspace into a vacuum-like silence. The gravitational constant within the shed’s perimeter shifted, pinning Arthur against the roaster’s frame.\n\nHis boots fused to the concrete as the Auditor initiated a hard-lock scan of the unregistered biomass.",
+      "state": {
+        "PHASE": "Rising Stakes",
+        "GENRE": "Sci-Fi Horror",
+        "INTENT": "Establish the mechanical weight of the world and the lethality of the flora.",
+        "AESTHETICS": {
+          "STYLE": "Gritty, mechanical, and high-stakes with a focus on tactile industrial processes.",
+          "VOICE": {
+            "primary": "Technical and Urgent",
+            "density": 0.8,
+            "metaphorFrequency": 0.4
+          }
+        },
+        "PHYSICS": {
+          "causal_debt": 5.6596,
+          "viscosity": 0.5,
+          "progression": 0.2916,
+          "causal_debt_ledger": 0,
+          "manifold_tension": 1,
+          "audit_error": 0.916809,
+          "chrome_stability": 0.8988,
+          "network_intrusion": 0.085,
+          "corporate_heat": 0.2783,
+          "street_cred": 0.0741,
+          "hull_integrity": 0.4274,
+          "fuel_reserves": 0.6125,
+          "sector_tension": 0.8282,
+          "mana": 0.9535,
+          "system_tier": 0.7603,
+          "narrative_credit": 1
+        },
+        "GRAPH": {
+          "nodes": [
+            {
+              "id": "Refined_Mana_Slag",
+              "type": "Item",
+              "description": "A dense, iridescent crystalline mass. It emits a low-frequency hum and possesses a high caloric density, capable of warping local gravity by 0.02g.",
+              "weight": 0.472
+            },
+            {
+              "id": "Patrolling_System_Entity",
+              "type": "Threat",
+              "description": "A high-tier surveillance construct hovering above the Cromer heights, scanning for temporal irregularities.",
+              "weight": 0.528
+            }
+          ],
+          "edges": [
+            {
+              "source": "Refined_Mana_Slag",
+              "target": "Patrolling_System_Entity",
+              "relation": "attracts",
+              "weight": 0.9,
+              "directional": true
+            }
+          ]
+        },
+        "ACTIVE_PINS": [
+          "Refined Mana-Slag",
+          "Giesen W6 Roaster",
+          "Ruptured Exhaust Flue",
+          "Cracked Foundation",
+          "Patrolling System Entity"
+        ],
+        "NARRATIVE_DEBT": [
+          "Origin of the 1200 Causal Debt",
+          "The specific nature of the Cromer blight",
+          "The identity of the debt collectors"
+        ],
+        "GAME_LOG": [
+          {
+            "id": "32d2c685-1787-44ae-8faf-32c5e12883a1",
+            "type": "milestone",
+            "message": "MILESTONE REACHED: 20% Progression (+1 Credit)",
+            "timestamp": 1773134505314
+          }
+        ],
+        "AUDIT_LOG": [],
+        "CURRENT_GOAL": "Extract the refined mana-slag and evade the patrolling System entity.",
+        "GRAND_OBJECTIVE": "Zero out the Causal Ledger to prevent the total erasure of Cromer from the timeline.",
+        "INTENSITY": 7.8692,
+        "BANNED_TERMS": [],
+        "SIGNIFICANCE_MAP": {
+          "The Giesen W6 Roaster": 3,
+          "Giesen W6 Roaster": 4
+        },
+        "CAUSAL_DEBT_LEDGER": 0,
+        "TITLE": "The Causal Roast",
+        "LOGLINE": "An artisanal roaster in a blighted coastal town must process volatile, mutated vegetation through a specialized machine to settle a massive temporal deficit before his existence is liquidated.",
+        "WORLD_LOGIC": "Time is a physical resource that can be spent or owed. In the town of Cromer, reality is fraying, causing the local flora to evolve into hyper-active, non-linear organisms that hold high caloric and causal value when processed correctly.",
+        "PILLARS": [
+          "Temporal Economics",
+          "Industrial Cosmic Horror",
+          "Botanical Mutation"
+        ],
+        "AXIOMS": {
+          "currency": "Mana",
+          "friction": "System Tier",
+          "penalty": "Causal Debt",
+          "recoveryRate": 0.2,
+          "isTransactional": true
+        },
+        "GENETIC_ANCHOR": "{\"PHASE\":\"Introduction\",\"GENRE\":\"Sci-Fi Horror\",\"INTENT\":\"Establish the mechanical weight of the world and the lethality of the flora.\",\"CURRENT_GOAL\":\"Complete the first batch of Cromer Flora to reduce the initial debt.\",\"INTENSITY\":7,\"AESTHETICS\":{\"STYLE\":\"Industrial Decadence\",\"VOICE\":{\"density\":0.8,\"metaphorFrequency\":0.4,\"primary\":\"Technical and Urgent\"}},\"PHYSICS\":{}}",
+        "BANNED_TERMS_VIOLATED": false
+      },
+      "usage": {
+        "input": 2348,
+        "output": 384,
+        "total": 5716
+      },
+      "timestamp": 1773134567979
+    }
+  ],
+  "exportedAt": "2026-03-10T09:23:05.193Z"
+}

@@ -1,0 +1,166 @@
+{
+  "state": {
+    "PHASE": "INITIALIZATION",
+    "GENRE": "LitRPG / Urban Fantasy",
+    "INTENT": "Launch the narrative with a high-stakes physical anomaly.",
+    "AESTHETICS": {
+      "STYLE": "Gritty, mechanical, and high-stakes suburban realism.",
+      "VOICE": {
+        "primary": "Technical and visceral",
+        "density": 0.8,
+        "metaphorFrequency": 0.3
+      }
+    },
+    "PHYSICS": {
+      "causal_debt": 0,
+      "viscosity": 0.5,
+      "progression": 0,
+      "causal_debt_ledger": 0,
+      "manifold_tension": 0,
+      "audit_error": 0
+    },
+    "GRAPH": {
+      "nodes": [],
+      "edges": []
+    },
+    "ACTIVE_PINS": [
+      "Mutated Scrub Turkey",
+      "Probat L12 Roasting Drum",
+      "Cromer Sandstone Driveway"
+    ],
+    "NARRATIVE_DEBT": [
+      "Causal Debt: Survival of the four-meter fall"
+    ],
+    "GAME_LOG": [],
+    "AUDIT_LOG": [],
+    "CURRENT_GOAL": "Evade the predatory scrub turkey and salvage the roasting drum.",
+    "GRAND_OBJECTIVE": "Secure the roasting equipment and establish a fortified perimeter in the Cromer workshop.",
+    "INTENSITY": 9,
+    "BANNED_TERMS": [],
+    "SIGNIFICANCE_MAP": {},
+    "CAUSAL_DEBT_LEDGER": 0,
+    "TITLE": "Integration Roast",
+    "LOGLINE": "A retired coffee roaster in suburban Sydney must survive the first ten minutes of a planetary system integration while hunted by a mutated scrub turkey.",
+    "WORLD_LOGIC": "Mana density influences biological growth rates and physical constants; the System enforces Newtonian physics unless Causal Debt is accrued to bypass them.",
+    "PILLARS": [
+      "Suburban Apocalypse",
+      "Causal Debt Mechanics",
+      "Craft-Based Survival"
+    ],
+    "AXIOMS": {
+      "currency": "Mana",
+      "friction": "System Tier",
+      "penalty": "System Anomaly",
+      "recoveryRate": 0.2,
+      "isTransactional": true
+    },
+    "GENETIC_ANCHOR": "{\"PHASE\":\"INITIALIZATION\",\"GENRE\":\"LitRPG / Urban Fantasy\",\"INTENT\":\"Launch the narrative with a high-stakes physical anomaly.\",\"CURRENT_GOAL\":\"Evade the predatory scrub turkey and salvage the roasting drum.\",\"INTENSITY\":9,\"AESTHETICS\":{\"STYLE\":\"Hard-boiled System Lit\",\"VOICE\":{\"density\":0.8,\"metaphorFrequency\":0.3,\"primary\":\"Technical and visceral\"}},\"PHYSICS\":{}}"
+  },
+  "segments": [
+    {
+      "id": "1773130371694-user",
+      "role": "user",
+      "text": "Setting: Cromer, NSW, ten minutes after the Global System Integration.\nScenario: A retired coffee roaster discovers that the local flora has rapidly mutated due to a sudden spike in ambient mana density. He must perform an improbable physical maneuver to evade a hostile, system-integrated scrub turkey and secure his roasting equipment.\nAction: Generate the opening scene. Spike the System Anomaly variable and force an immediate Causal Debt calculation by having the protagonist survive a mathematically unlikely fall during the evasion.",
+      "timestamp": 1773130371694
+    },
+    {
+      "id": "1773130386157-bot",
+      "role": "model",
+      "text": "The gum trees lining the back fence of the Cromer property did not grow; they vibrated, their leaves turning into serrated blades of glass-heavy silica. Arthur gripped the cooling tray of his 1950s Probat roaster, his knuckles white against the cast iron. Ten minutes ago, a translucent screen had informed him he was an 'Unranked Artisan.' Now, the local scrub turkey—previously a nuisance that dug up his mulch—stood two meters tall, its wattle pulsing with a toxic violet hue. The bird let out a metallic screech, its talons gouging deep furrows into the timber deck. Arthur lunged for the heavy roasting drum, hauling the thirty-kilogram cylinder toward the edge of the retaining wall. The turkey charged, a blur of mutated muscle and oily feathers. Arthur spun, the weight of the drum dragging him backward over the steep drop toward the sandstone driveway below. Gravity should have claimed his hip and spine. Instead, as his boots left the ledge, the air curdled. A crimson notification blinked in his peripheral vision: [SYSTEM ANOMALY DETECTED: 8.9]. Time stuttered. Arthur’s body twisted with impossible torque, his center of mass shifting mid-air as if tethered by invisible wires. He hit the concrete in a perfect roll, the impact energy dissipating into a low-frequency hum that cracked the driveway but left his bones intact. [CAUSAL DEBT INCURRED: 450 UNITS]. [PROBABILITY VIOLATION RECORDED]. The turkey peered over the ledge, clicking its beak in frustration as Arthur scrambled toward the garage, the roasting drum still clutched in his arms.",
+      "state": {
+        "PHASE": "INITIALIZATION",
+        "GENRE": "LitRPG / Urban Fantasy",
+        "INTENT": "Launch the narrative with a high-stakes physical anomaly.",
+        "AESTHETICS": {
+          "STYLE": "Gritty, mechanical, and high-stakes suburban realism.",
+          "VOICE": {
+            "density": 0.8,
+            "metaphorFrequency": 0.3,
+            "primary": "Technical and visceral"
+          }
+        },
+        "PHYSICS": {
+          "causal_debt": 0,
+          "viscosity": 0.5,
+          "progression": 0,
+          "causal_debt_ledger": 0,
+          "manifold_tension": 0,
+          "audit_error": 0
+        },
+        "GRAPH": {
+          "nodes": [],
+          "edges": []
+        },
+        "ACTIVE_PINS": [
+          "Mutated Scrub Turkey",
+          "Probat L12 Roasting Drum",
+          "Cromer Sandstone Driveway"
+        ],
+        "NARRATIVE_DEBT": [
+          "Causal Debt: Survival of the four-meter fall"
+        ],
+        "GAME_LOG": [],
+        "AUDIT_LOG": [],
+        "CURRENT_GOAL": "Evade the predatory scrub turkey and salvage the roasting drum.",
+        "GRAND_OBJECTIVE": "Secure the roasting equipment and establish a fortified perimeter in the Cromer workshop.",
+        "INTENSITY": 9,
+        "BANNED_TERMS": [],
+        "SIGNIFICANCE_MAP": {},
+        "CAUSAL_DEBT_LEDGER": 0,
+        "TITLE": "Integration Roast",
+        "LOGLINE": "A retired coffee roaster in suburban Sydney must survive the first ten minutes of a planetary system integration while hunted by a mutated scrub turkey.",
+        "WORLD_LOGIC": "Mana density influences biological growth rates and physical constants; the System enforces Newtonian physics unless Causal Debt is accrued to bypass them.",
+        "PILLARS": [
+          "Suburban Apocalypse",
+          "Causal Debt Mechanics",
+          "Craft-Based Survival"
+        ],
+        "AXIOMS": {
+          "currency": "Mana",
+          "friction": "System Tier",
+          "penalty": "System Anomaly",
+          "recoveryRate": 0.2,
+          "isTransactional": true
+        },
+        "GENETIC_ANCHOR": "{\"PHASE\":\"INITIALIZATION\",\"GENRE\":\"LitRPG / Urban Fantasy\",\"INTENT\":\"Launch the narrative with a high-stakes physical anomaly.\",\"CURRENT_GOAL\":\"Evade the predatory scrub turkey and salvage the roasting drum.\",\"INTENSITY\":9,\"AESTHETICS\":{\"STYLE\":\"Hard-boiled System Lit\",\"VOICE\":{\"density\":0.8,\"metaphorFrequency\":0.3,\"primary\":\"Technical and visceral\"}},\"PHYSICS\":{}}"
+      },
+      "blueprint": {
+        "title": "Integration Roast",
+        "logline": "A retired coffee roaster in suburban Sydney must survive the first ten minutes of a planetary system integration while hunted by a mutated scrub turkey.",
+        "pillars": [
+          "Suburban Apocalypse",
+          "Causal Debt Mechanics",
+          "Craft-Based Survival"
+        ],
+        "world_logic": "Mana density influences biological growth rates and physical constants; the System enforces Newtonian physics unless Causal Debt is accrued to bypass them.",
+        "tone_style": "Gritty, mechanical, and high-stakes suburban realism.",
+        "active_pins": [
+          "Mutated Scrub Turkey",
+          "Probat L12 Roasting Drum",
+          "Cromer Sandstone Driveway"
+        ],
+        "narrative_debt": [
+          "Causal Debt: Survival of the four-meter fall"
+        ],
+        "grand_objective": "Secure the roasting equipment and establish a fortified perimeter in the Cromer workshop.",
+        "axioms": {
+          "currency": "Mana Shards",
+          "friction": "System Anomaly Index",
+          "isTransactional": true,
+          "penalty": "Causal Debt",
+          "recoveryRate": 0.05,
+          "secondaryCurrency": "Reputation"
+        },
+        "inciting_incident": "Global System Integration at 14:00 AEST.",
+        "protagonist_conflict": "Physical frailty vs. System-mandated survival requirements."
+      },
+      "usage": {
+        "input": 514,
+        "output": 858,
+        "total": 2512
+      },
+      "timestamp": 1773130386157
+    }
+  ],
+  "exportedAt": "2026-03-10T08:13:14.793Z"
+}

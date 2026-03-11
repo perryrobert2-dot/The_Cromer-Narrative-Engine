@@ -1,0 +1,166 @@
+{
+  "state": {
+    "PHASE": "Inciting Incident",
+    "GENRE": "LitRPG / Suburban Thriller",
+    "INTENT": "Introduce the Causal Debt mechanic via a low-probability survival event.",
+    "AESTHETICS": {
+      "STYLE": "Gritty, tactile, and mathematically absurd.",
+      "VOICE": {
+        "primary": "Observational and tense",
+        "density": 0.85,
+        "metaphorFrequency": 0.4
+      }
+    },
+    "PHYSICS": {
+      "causal_debt": 0,
+      "viscosity": 0.5,
+      "progression": 0,
+      "causal_debt_ledger": 0,
+      "manifold_tension": 0,
+      "audit_error": 0
+    },
+    "GRAPH": {
+      "nodes": [],
+      "edges": []
+    },
+    "ACTIVE_PINS": [
+      "The Giesen W6 Roaster",
+      "System Integration +10min",
+      "Cromer Heights Topography"
+    ],
+    "NARRATIVE_DEBT": [
+      "Calculated Survival: Arthur's physical integrity has been maintained through a high-interest probability loan."
+    ],
+    "GAME_LOG": [],
+    "AUDIT_LOG": [],
+    "CURRENT_GOAL": "Secure the roasting shed and survive the Mound-Guardian's initial assault.",
+    "GRAND_OBJECTIVE": "Relocate the roasting operation to a high-stability zone while managing an escalating Causal Debt.",
+    "INTENSITY": 9,
+    "BANNED_TERMS": [],
+    "SIGNIFICANCE_MAP": {},
+    "CAUSAL_DEBT_LEDGER": 0,
+    "TITLE": "The Batch-Five Anomaly",
+    "LOGLINE": "A retired coffee roaster in suburban Sydney must navigate a magically-warped ecosystem to protect his vintage equipment from a hyper-evolved avian menace.",
+    "WORLD_LOGIC": "Mana density correlates to historical utility; objects with high sentimental or functional value act as anchors for reality-warping spikes.",
+    "PILLARS": [
+      "Suburban Surrealism",
+      "Systemic Debt Mechanics",
+      "Botanical Horror"
+    ],
+    "AXIOMS": {
+      "currency": "Mana",
+      "friction": "System Tier",
+      "penalty": "System Anomaly",
+      "recoveryRate": 0.2,
+      "isTransactional": true
+    },
+    "GENETIC_ANCHOR": "{\"PHASE\":\"Inciting Incident\",\"GENRE\":\"LitRPG / Suburban Thriller\",\"INTENT\":\"Introduce the Causal Debt mechanic via a low-probability survival event.\",\"CURRENT_GOAL\":\"Secure the roasting shed and survive the Mound-Guardian's initial assault.\",\"INTENSITY\":9,\"AESTHETICS\":{\"STYLE\":\"Tactile Realism\",\"VOICE\":{\"density\":0.85,\"metaphorFrequency\":0.4,\"primary\":\"Observational and tense\"}},\"PHYSICS\":{}}"
+  },
+  "segments": [
+    {
+      "id": "1773131219610-user",
+      "role": "user",
+      "text": "Setting: Cromer, NSW, ten minutes after the Global System Integration.\nScenario: A retired coffee roaster discovers that the local flora has rapidly mutated due to a sudden spike in ambient mana density. He must perform an improbable physical maneuver to evade a hostile, system-integrated scrub turkey and secure his roasting equipment.\nAction: Generate the opening scene. Spike the System Anomaly variable and force an immediate Causal Debt calculation by having the protagonist survive a mathematically unlikely fall during the evasion.",
+      "timestamp": 1773131219610
+    },
+    {
+      "id": "1773131234652-bot",
+      "role": "model",
+      "text": "The Giesen W6 stood in the center of the shed, its cast-iron frame vibrating with a frequency that made Arthur’s molars ache. Outside, the Cromer afternoon had been replaced by a shimmering distortion. The banksia bushes along the fence line had calcified into jagged, violet glass, their serrated leaves clicking in a wind that didn't move the air. Ten minutes ago, the 'Global System Integration' prompt had seared itself into his retinas, and since then, the world had gone mad. A shadow blocked the doorway. It was a scrub turkey, but the Integration had been unkind. The bird stood six feet tall, its wattle glowing with a sickly, rhythmic light. A floating tag hovered above its head: [CROMER MOUND-GUARDIAN - LVL 4]. It let out a screech that sounded like grinding metal and lunged. Arthur ducked, his hand catching the heavy cooling tray of the roaster for leverage. He scrambled toward the rear exit, but the creature was faster, its talons shredding the corrugated iron of the shed wall. With no choice, Arthur threw himself toward the sandstone retaining wall at the property's edge. It was a four-meter drop onto the jagged landscaping rocks of the lower terrace—a fall that, by every law of physics and biology Arthur knew, should have resulted in a snapped femur and a punctured lung. As he hit the air, a red transparency filled his vision: [WARNING: LETHAL PROBABILITY DETECTED. INITIATING CAUSAL OVERRIDE]. He landed with a dull thud, the impact feeling no more violent than a hop from a curb. He rolled to his feet, untouched, but a new meter blinked at the bottom of his sight, pulsing a deep, ominous crimson: [CAUSAL DEBT: 1,200 UNITS - INTEREST ACCRUING]. The turkey looked down from the ledge, its glowing eyes narrowing as the sky above Sydney began to fracture into geometric patterns.",
+      "state": {
+        "PHASE": "Inciting Incident",
+        "GENRE": "LitRPG / Suburban Thriller",
+        "INTENT": "Introduce the Causal Debt mechanic via a low-probability survival event.",
+        "AESTHETICS": {
+          "STYLE": "Gritty, tactile, and mathematically absurd.",
+          "VOICE": {
+            "density": 0.85,
+            "metaphorFrequency": 0.4,
+            "primary": "Observational and tense"
+          }
+        },
+        "PHYSICS": {
+          "causal_debt": 0,
+          "viscosity": 0.5,
+          "progression": 0,
+          "causal_debt_ledger": 0,
+          "manifold_tension": 0,
+          "audit_error": 0
+        },
+        "GRAPH": {
+          "nodes": [],
+          "edges": []
+        },
+        "ACTIVE_PINS": [
+          "The Giesen W6 Roaster",
+          "System Integration +10min",
+          "Cromer Heights Topography"
+        ],
+        "NARRATIVE_DEBT": [
+          "Calculated Survival: Arthur's physical integrity has been maintained through a high-interest probability loan."
+        ],
+        "GAME_LOG": [],
+        "AUDIT_LOG": [],
+        "CURRENT_GOAL": "Secure the roasting shed and survive the Mound-Guardian's initial assault.",
+        "GRAND_OBJECTIVE": "Relocate the roasting operation to a high-stability zone while managing an escalating Causal Debt.",
+        "INTENSITY": 9,
+        "BANNED_TERMS": [],
+        "SIGNIFICANCE_MAP": {},
+        "CAUSAL_DEBT_LEDGER": 0,
+        "TITLE": "The Batch-Five Anomaly",
+        "LOGLINE": "A retired coffee roaster in suburban Sydney must navigate a magically-warped ecosystem to protect his vintage equipment from a hyper-evolved avian menace.",
+        "WORLD_LOGIC": "Mana density correlates to historical utility; objects with high sentimental or functional value act as anchors for reality-warping spikes.",
+        "PILLARS": [
+          "Suburban Surrealism",
+          "Systemic Debt Mechanics",
+          "Botanical Horror"
+        ],
+        "AXIOMS": {
+          "currency": "Mana",
+          "friction": "System Tier",
+          "penalty": "System Anomaly",
+          "recoveryRate": 0.2,
+          "isTransactional": true
+        },
+        "GENETIC_ANCHOR": "{\"PHASE\":\"Inciting Incident\",\"GENRE\":\"LitRPG / Suburban Thriller\",\"INTENT\":\"Introduce the Causal Debt mechanic via a low-probability survival event.\",\"CURRENT_GOAL\":\"Secure the roasting shed and survive the Mound-Guardian's initial assault.\",\"INTENSITY\":9,\"AESTHETICS\":{\"STYLE\":\"Tactile Realism\",\"VOICE\":{\"density\":0.85,\"metaphorFrequency\":0.4,\"primary\":\"Observational and tense\"}},\"PHYSICS\":{}}"
+      },
+      "blueprint": {
+        "title": "The Batch-Five Anomaly",
+        "logline": "A retired coffee roaster in suburban Sydney must navigate a magically-warped ecosystem to protect his vintage equipment from a hyper-evolved avian menace.",
+        "pillars": [
+          "Suburban Surrealism",
+          "Systemic Debt Mechanics",
+          "Botanical Horror"
+        ],
+        "world_logic": "Mana density correlates to historical utility; objects with high sentimental or functional value act as anchors for reality-warping spikes.",
+        "tone_style": "Gritty, tactile, and mathematically absurd.",
+        "active_pins": [
+          "The Giesen W6 Roaster",
+          "System Integration +10min",
+          "Cromer Heights Topography"
+        ],
+        "narrative_debt": [
+          "Calculated Survival: Arthur's physical integrity has been maintained through a high-interest probability loan."
+        ],
+        "grand_objective": "Relocate the roasting operation to a high-stability zone while managing an escalating Causal Debt.",
+        "axioms": {
+          "currency": "System Stability",
+          "friction": "Biological Dissonance",
+          "isTransactional": true,
+          "penalty": "Causal Debt",
+          "recoveryRate": 0.05,
+          "secondaryCurrency": "Mana Density"
+        },
+        "inciting_incident": "The Global System Integration spikes mana levels in Cromer, turning local wildlife into predatory constructs.",
+        "protagonist_conflict": "Arthur's desire for a quiet retirement versus the System's requirement for high-stakes engagement."
+      },
+      "usage": {
+        "input": 514,
+        "output": 962,
+        "total": 2586
+      },
+      "timestamp": 1773131234652
+    }
+  ],
+  "exportedAt": "2026-03-10T08:27:36.412Z"
+}
