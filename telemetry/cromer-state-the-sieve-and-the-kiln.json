@@ -1,0 +1,649 @@
+{
+  "state": {
+    "PHASE": "CLIMAX",
+    "GENRE": "Survival Horror",
+    "INTENT": "Reimagine the classic fable as a study in physical collapse.",
+    "AESTHETICS": {
+      "STYLE": "Brutalist, sparse, tactile survivalism.",
+      "VOICE": {
+        "primary": "Observational",
+        "density": 0.85,
+        "metaphorFrequency": 0.2
+      }
+    },
+    "PHYSICS": {
+      "causal_debt": 0.1691,
+      "progression": 0.3999,
+      "pacing": 0.9381,
+      "introspection_density": 0.0257,
+      "action_intensity": 0.8923,
+      "primary_resource": {
+        "label": "Reputation",
+        "description": "The social currency held by a pig in a city of predators; once spent, it cannot be regained.",
+        "value": 0.6878
+      },
+      "environmental_friction": {
+        "label": "Viscosity",
+        "description": "The stifling, suffocating atmosphere of the urban sprawl that slows down escape and investigation.",
+        "value": 0.888
+      },
+      "protagonist_integrity": {
+        "label": "Moral Resolve",
+        "description": "The structural soundness of the protagonist's conscience against the predatory pressure of the Big Bad.",
+        "value": 0.6929
+      },
+      "narrative_credit": 1.5213999999999999
+    },
+    "GRAPH": {
+      "nodes": [
+        {
+          "id": "The Fired-Clay Redoubt",
+          "type": "LOCATION",
+          "description": "A fortified structure of kiln-fired brick and iron, designed for thermal resistance.",
+          "weight": 0.513,
+          "latent": false
+        },
+        {
+          "id": "The Predator",
+          "type": "ANTAGONIST",
+          "description": "A massive, relentless entity with high lung capacity and mechanical movement.",
+          "weight": 0.487,
+          "latent": false
+        }
+      ],
+      "edges": [
+        {
+          "source": "The Predator",
+          "target": "The Fired-Clay Redoubt",
+          "relation": "ASSAULT",
+          "weight": 0.9,
+          "directional": true
+        }
+      ]
+    },
+    "ACTIVE_PINS": [
+      "The Fired-Clay Redoubt"
+    ],
+    "NARRATIVE_DEBT": [
+      "Establish the predator's physical presence",
+      "Demonstrate the failure of the first two material types"
+    ],
+    "GAME_LOG": [
+      {
+        "id": "cd6ef3a4-8e01-483e-b6eb-403af7b889b9",
+        "type": "milestone",
+        "message": "MILESTONE REACHED: 20% Progression (+1 Credit)",
+        "timestamp": 1773220852249
+      }
+    ],
+    "AUDIT_LOG": [],
+    "CURRENT_GOAL": "Establish the final confrontation at the Fired-Clay Redoubt",
+    "GRAND_OBJECTIVE": "Secure the youngest sibling's masonry bunker against the final assault.",
+    "INTENSITY": 9.0714,
+    "BANNED_TERMS": [
+      "huff and puff",
+      "straw house",
+      "stick house",
+      "brick house",
+      "little piggies",
+      "fairytale",
+      "happily ever after",
+      "wolf at the door"
+    ],
+    "SIGNIFICANCE_MAP": {
+      "The Switchgrass Perimeter": 2
+    },
+    "CAUSAL_DEBT_LEDGER": 0,
+    "TITLE": "The Sieve and the Kiln",
+    "LOGLINE": "In a desolate coastal scrubland, three siblings must engineer thermal and structural defenses against a starving apex predator with concussive lung capacity.",
+    "WORLD_LOGIC": "Caloric desperation dictates all movement. Structures are not homes, but defensive perimeters. The predator utilizes atmospheric pressure as a primary breach tool.",
+    "PILLARS": [
+      "Material failure",
+      "Biological predation",
+      "Structural engineering as survival"
+    ],
+    "TICK": 2,
+    "AXIOMS": {
+      "currency": "Reputation",
+      "friction": "Viscosity",
+      "penalty": "Causal Debt",
+      "recoveryRate": 0.2,
+      "isTransactional": true
+    },
+    "GENETIC_ANCHOR": "{\"PHASE\":\"First Breach\",\"GENRE\":\"Survival Horror\",\"INTENT\":\"Reimagine the classic fable as a study in physical collapse.\",\"CURRENT_GOAL\":\"Establish the vulnerability of the first structure and the arrival of the antagonist.\",\"INTENSITY\":7,\"AESTHETICS\":{\"STYLE\":\"Hard Realism\",\"VOICE\":{\"density\":0.85,\"metaphorFrequency\":0.2,\"primary\":\"Observational\"}}}",
+    "WORLD_ENTITIES": {
+      "mayor_001": {
+        "id": "mayor_001",
+        "name": "Mayor of Oakhaven",
+        "lod": "Vector",
+        "phase": "Diplomatic",
+        "goal": "Maintain order",
+        "metrics": {
+          "affinity": 0.5,
+          "fear": 0.1,
+          "debt": 0
+        },
+        "memory": [
+          "The Fired-Clay Redoubt",
+          "The Switchgrass Perimeter"
+        ],
+        "lastInteractionTick": 0,
+        "memoryWeights": {
+          "The Switchgrass Perimeter": 0.9168
+        }
+      },
+      "dragon_001": {
+        "id": "dragon_001",
+        "name": "The Obsidian Drake",
+        "lod": "Manifold",
+        "phase": "Slumber",
+        "goal": "Guard the hoard",
+        "metrics": {
+          "tension": 0.2,
+          "hunger": 0.1
+        },
+        "strategy": {
+          "counter_measure": 0.1
+        },
+        "lastInteractionTick": 0,
+        "memoryWeights": {}
+      }
+    },
+    "BANNED_TERMS_VIOLATED": false
+  },
+  "segments": [
+    {
+      "id": "1773220091026-user",
+      "role": "user",
+      "text": "A rewrite of the story of the 3 little pigs",
+      "timestamp": 1773220091026
+    },
+    {
+      "id": "1773220110249-bot",
+      "role": "model",
+      "text": "Yellowed switchgrass rattled against the dunes. The structure was a sieve of woven stalks, held together by friction and salted twine. Inside, the eldest brother pressed his weight against the center pole, watching the gaps between the reeds. A gray shadow eclipsed the light. The predator’s lungs expanded—a wet, heavy intake of air that caused the grass walls to bow inward toward the vacuum. Then came the release. It was a concussive venting of pressure. The twine snapped. The yellowed ribs of the shelter disintegrated into a cloud of chaff. The eldest brother rolled through the grit, his knees scraping the hard-packed sand as he fled toward the timber-line where the second brother waited. Behind him, the predator stepped over the flattened reeds, its gaze fixed on the heat signature of the fleeing mass.",
+      "state": {
+        "PHASE": "First Breach",
+        "GENRE": "Survival Horror",
+        "INTENT": "Reimagine the classic fable as a study in physical collapse.",
+        "AESTHETICS": {
+          "STYLE": "Brutalist, sparse, tactile survivalism.",
+          "VOICE": {
+            "density": 0.85,
+            "metaphorFrequency": 0.2,
+            "primary": "Observational"
+          }
+        },
+        "PHYSICS": {
+          "causal_debt": 0,
+          "progression": 0,
+          "pacing": 0.7,
+          "introspection_density": 0.8,
+          "action_intensity": 0.4,
+          "primary_resource": {
+            "label": "Reputation",
+            "description": "The social currency held by a pig in a city of predators; once spent, it cannot be regained.",
+            "value": 0.5
+          },
+          "environmental_friction": {
+            "label": "Viscosity",
+            "description": "The stifling, suffocating atmosphere of the urban sprawl that slows down escape and investigation.",
+            "value": 0.5
+          },
+          "protagonist_integrity": {
+            "label": "Moral Resolve",
+            "description": "The structural soundness of the protagonist's conscience against the predatory pressure of the Big Bad.",
+            "value": 1
+          }
+        },
+        "GRAPH": {
+          "nodes": [],
+          "edges": []
+        },
+        "ACTIVE_PINS": [
+          "The Switchgrass Perimeter",
+          "The Timber Lean-to",
+          "The Fired-Clay Redoubt"
+        ],
+        "NARRATIVE_DEBT": [
+          "Establish the predator's physical presence",
+          "Demonstrate the failure of the first two material types"
+        ],
+        "GAME_LOG": [],
+        "AUDIT_LOG": [],
+        "CURRENT_GOAL": "Establish the vulnerability of the first structure and the arrival of the antagonist.",
+        "GRAND_OBJECTIVE": "Secure the youngest sibling's masonry bunker against the final assault.",
+        "INTENSITY": 7,
+        "BANNED_TERMS": [
+          "huff and puff",
+          "straw house",
+          "stick house",
+          "brick house",
+          "little piggies",
+          "fairytale",
+          "happily ever after",
+          "wolf at the door"
+        ],
+        "SIGNIFICANCE_MAP": {},
+        "CAUSAL_DEBT_LEDGER": 0,
+        "TITLE": "The Sieve and the Kiln",
+        "LOGLINE": "In a desolate coastal scrubland, three siblings must engineer thermal and structural defenses against a starving apex predator with concussive lung capacity.",
+        "WORLD_LOGIC": "Caloric desperation dictates all movement. Structures are not homes, but defensive perimeters. The predator utilizes atmospheric pressure as a primary breach tool.",
+        "PILLARS": [
+          "Material failure",
+          "Biological predation",
+          "Structural engineering as survival"
+        ],
+        "TICK": 0,
+        "AXIOMS": {
+          "currency": "Reputation",
+          "friction": "Viscosity",
+          "penalty": "Causal Debt",
+          "recoveryRate": 0.2,
+          "isTransactional": true
+        },
+        "GENETIC_ANCHOR": "{\"PHASE\":\"First Breach\",\"GENRE\":\"Survival Horror\",\"INTENT\":\"Reimagine the classic fable as a study in physical collapse.\",\"CURRENT_GOAL\":\"Establish the vulnerability of the first structure and the arrival of the antagonist.\",\"INTENSITY\":7,\"AESTHETICS\":{\"STYLE\":\"Hard Realism\",\"VOICE\":{\"density\":0.85,\"metaphorFrequency\":0.2,\"primary\":\"Observational\"}}}",
+        "WORLD_ENTITIES": {
+          "mayor_001": {
+            "id": "mayor_001",
+            "name": "Mayor of Oakhaven",
+            "lod": "Vector",
+            "phase": "Diplomatic",
+            "goal": "Maintain order",
+            "metrics": {
+              "affinity": 0.5,
+              "fear": 0.1,
+              "debt": 0
+            },
+            "memory": [],
+            "lastInteractionTick": 0
+          },
+          "dragon_001": {
+            "id": "dragon_001",
+            "name": "The Obsidian Drake",
+            "lod": "Manifold",
+            "phase": "Slumber",
+            "goal": "Guard the hoard",
+            "metrics": {
+              "tension": 0.2,
+              "hunger": 0.1
+            },
+            "strategy": {
+              "counter_measure": 0
+            },
+            "lastInteractionTick": 0
+          }
+        }
+      },
+      "blueprint": {
+        "title": "The Sieve and the Kiln",
+        "logline": "In a desolate coastal scrubland, three siblings must engineer thermal and structural defenses against a starving apex predator with concussive lung capacity.",
+        "pillars": [
+          "Material failure",
+          "Biological predation",
+          "Structural engineering as survival"
+        ],
+        "world_logic": "Caloric desperation dictates all movement. Structures are not homes, but defensive perimeters. The predator utilizes atmospheric pressure as a primary breach tool.",
+        "tone_style": "Brutalist, sparse, tactile survivalism.",
+        "active_pins": [
+          "The Switchgrass Perimeter",
+          "The Timber Lean-to",
+          "The Fired-Clay Redoubt"
+        ],
+        "narrative_debt": [
+          "Establish the predator's physical presence",
+          "Demonstrate the failure of the first two material types"
+        ],
+        "grand_objective": "Secure the youngest sibling's masonry bunker against the final assault.",
+        "inciting_incident": "The seasonal migration of the gray-furred predator into the coastal wetlands.",
+        "protagonist_conflict": "The tension between rapid, low-effort construction and the slow, resource-heavy labor of permanent fortification."
+      },
+      "usage": {
+        "input": 402,
+        "output": 610,
+        "total": 2988
+      },
+      "timestamp": 1773220110249
+    },
+    {
+      "id": "1773220168840-user",
+      "role": "user",
+      "text": "continue",
+      "timestamp": 1773220168840
+    },
+    {
+      "id": "1773220179630-bot",
+      "role": "model",
+      "text": "The timber lean-to was a jagged assembly of pine offcuts and saplings. Resin gummed the joints. The eldest brother slammed into the door, his palms slick with sap. The second brother pulled him inside, throwing a heavy oak bar across the frame. They felt the vibrations first—heavy, rhythmic impacts that vibrated through the floorboards. The wolf did not scratch. It did not speak. It leaned into the structure, the wood groaning as the pitch began to crack under the lateral force. The smell of wet fur filtered through the gaps in the bark. A branch snapped in the wall. The second brother gripped a rusted felling axe, his knuckles turning white as the roof began to tilt.\n\nThe structure groaned, a deep internal shear. The predator drew another breath, deeper this time, drawing the oxygen from the small room. The pine shivered. One by one, the iron nails pulled from the wood with a high-pitched scream. The brothers ducked low as the wind-load tore the roof from its moorings, scattering the pine needles and resin-soaked planks into the dark. They scrambled toward the ravine, feet slipping on the slick mud of the slope. Ahead, the third structure sat atop the rise: a squat, windowless block of fired clay and heavy iron.\n\nThe predator moved with a mechanical gait, bypassing the ruins of the wood-pile. It stopped at the threshold of the redoubt. It pressed a massive, scarred hand against the kiln-fired brick. The mortar was cold. The pig inside did not look through a peephole. He was feeding coal into a cast-iron stove, his movements precise. The two brothers collapsed against the interior wall, their chests heaving. The predator inhaled, its ribcage expanding to a grotesque width. It exhaled against the brick. The structure did not vibrate. The air merely redirected, swirling around the corners of the redoubt. \n\nThe wolf moved toward the chimney. It gripped the masonry, pulling its weight upward. On the roof, it looked down the narrow flue. Below, the third brother adjusted the damper. He tipped a bucket of rendered fat into the white-hot coals. A column of blue flame roared upward, filling the chimney.",
+      "state": {
+        "PHASE": "INCITING_INCIDENT",
+        "GENRE": "Survival Horror",
+        "INTENT": "Reimagine the classic fable as a study in physical collapse.",
+        "AESTHETICS": {
+          "STYLE": "Brutalist, sparse, tactile survivalism.",
+          "VOICE": {
+            "primary": "Observational",
+            "density": 0.85,
+            "metaphorFrequency": 0.2
+          }
+        },
+        "PHYSICS": {
+          "causal_debt": 0.25,
+          "progression": 0.1875,
+          "pacing": 0.8875,
+          "introspection_density": 0.05,
+          "action_intensity": 0.775,
+          "primary_resource": {
+            "label": "Reputation",
+            "description": "The social currency held by a pig in a city of predators; once spent, it cannot be regained.",
+            "value": 0
+          },
+          "environmental_friction": {
+            "label": "Viscosity",
+            "description": "The stifling, suffocating atmosphere of the urban sprawl that slows down escape and investigation.",
+            "value": 0.625
+          },
+          "protagonist_integrity": {
+            "label": "Moral Resolve",
+            "description": "The structural soundness of the protagonist's conscience against the predatory pressure of the Big Bad.",
+            "value": 0.875
+          },
+          "narrative_credit": 0.4
+        },
+        "GRAPH": {
+          "nodes": [
+            {
+              "id": "Switchgrass_Perimeter",
+              "type": "LOCATION",
+              "description": "A fragile, woven structure of dried stalks.",
+              "weight": 0.125,
+              "latent": false
+            },
+            {
+              "id": "Antagonist",
+              "type": "ENTITY",
+              "description": "A predatory force capable of high-pressure air displacement.",
+              "weight": 0.563,
+              "latent": false
+            },
+            {
+              "id": "Eldest_Brother",
+              "type": "ENTITY",
+              "description": "A fleeing survivor moving toward the timber-line.",
+              "weight": 0.313,
+              "latent": false
+            }
+          ],
+          "edges": [
+            {
+              "source": "Antagonist",
+              "target": "Switchgrass_Perimeter",
+              "relation": "DESTRUCTION",
+              "weight": 1,
+              "directional": true
+            },
+            {
+              "source": "Eldest_Brother",
+              "target": "Timber_Lean-to",
+              "relation": "FLIGHT",
+              "weight": 0.7,
+              "directional": true
+            }
+          ]
+        },
+        "ACTIVE_PINS": [
+          "The Switchgrass Perimeter",
+          "The Timber Lean-to",
+          "The Fired-Clay Redoubt"
+        ],
+        "NARRATIVE_DEBT": [
+          "Establish the predator's physical presence",
+          "Demonstrate the failure of the first two material types"
+        ],
+        "GAME_LOG": [],
+        "AUDIT_LOG": [],
+        "CURRENT_GOAL": "Establish the vulnerability of the first structure and the arrival of the antagonist.",
+        "GRAND_OBJECTIVE": "Secure the youngest sibling's masonry bunker against the final assault.",
+        "INTENSITY": 8.875,
+        "BANNED_TERMS": [
+          "huff and puff",
+          "straw house",
+          "stick house",
+          "brick house",
+          "little piggies",
+          "fairytale",
+          "happily ever after",
+          "wolf at the door"
+        ],
+        "SIGNIFICANCE_MAP": {
+          "The Switchgrass Perimeter": 1
+        },
+        "CAUSAL_DEBT_LEDGER": 0,
+        "TITLE": "The Sieve and the Kiln",
+        "LOGLINE": "In a desolate coastal scrubland, three siblings must engineer thermal and structural defenses against a starving apex predator with concussive lung capacity.",
+        "WORLD_LOGIC": "Caloric desperation dictates all movement. Structures are not homes, but defensive perimeters. The predator utilizes atmospheric pressure as a primary breach tool.",
+        "PILLARS": [
+          "Material failure",
+          "Biological predation",
+          "Structural engineering as survival"
+        ],
+        "TICK": 1,
+        "AXIOMS": {
+          "currency": "Reputation",
+          "friction": "Viscosity",
+          "penalty": "Causal Debt",
+          "recoveryRate": 0.2,
+          "isTransactional": true
+        },
+        "GENETIC_ANCHOR": "{\"PHASE\":\"First Breach\",\"GENRE\":\"Survival Horror\",\"INTENT\":\"Reimagine the classic fable as a study in physical collapse.\",\"CURRENT_GOAL\":\"Establish the vulnerability of the first structure and the arrival of the antagonist.\",\"INTENSITY\":7,\"AESTHETICS\":{\"STYLE\":\"Hard Realism\",\"VOICE\":{\"density\":0.85,\"metaphorFrequency\":0.2,\"primary\":\"Observational\"}}}",
+        "WORLD_ENTITIES": {
+          "mayor_001": {
+            "id": "mayor_001",
+            "name": "Mayor of Oakhaven",
+            "lod": "Vector",
+            "phase": "Diplomatic",
+            "goal": "Maintain order",
+            "metrics": {
+              "affinity": 0.5,
+              "fear": 0.1,
+              "debt": 0
+            },
+            "memory": [
+              "The Switchgrass Perimeter"
+            ],
+            "lastInteractionTick": 0,
+            "memoryWeights": {}
+          },
+          "dragon_001": {
+            "id": "dragon_001",
+            "name": "The Obsidian Drake",
+            "lod": "Manifold",
+            "phase": "Slumber",
+            "goal": "Guard the hoard",
+            "metrics": {
+              "tension": 0.2,
+              "hunger": 0.1
+            },
+            "strategy": {
+              "counter_measure": 0.05
+            },
+            "lastInteractionTick": 0,
+            "memoryWeights": {}
+          }
+        },
+        "BANNED_TERMS_VIOLATED": false
+      },
+      "usage": {
+        "input": 830,
+        "output": 459,
+        "total": 1289
+      },
+      "criticSuggestion": null,
+      "timestamp": 1773220179630
+    },
+    {
+      "id": "1773220845354-user",
+      "role": "user",
+      "text": "continue",
+      "timestamp": 1773220845354
+    },
+    {
+      "id": "1773220852249-bot",
+      "role": "model",
+      "text": "The predator’s weight shifted. A heavy thud echoed through the brick as a mass of charred meat hit the iron grate at the bottom of the flue. The third brother picked up a shovel. He slid the bolt on the firebox. The room filled with the heat of the furnace. He began to shovel more coal onto the cooling mass on the grate. Outside, the wind died down. The switchgrass stopped rattling.",
+      "state": {
+        "PHASE": "CLIMAX",
+        "GENRE": "Survival Horror",
+        "INTENT": "Reimagine the classic fable as a study in physical collapse.",
+        "AESTHETICS": {
+          "STYLE": "Brutalist, sparse, tactile survivalism.",
+          "VOICE": {
+            "primary": "Observational",
+            "density": 0.85,
+            "metaphorFrequency": 0.2
+          }
+        },
+        "PHYSICS": {
+          "causal_debt": 0.1691,
+          "progression": 0.3999,
+          "pacing": 0.9381,
+          "introspection_density": 0.0257,
+          "action_intensity": 0.8923,
+          "primary_resource": {
+            "label": "Reputation",
+            "description": "The social currency held by a pig in a city of predators; once spent, it cannot be regained.",
+            "value": 0.6878
+          },
+          "environmental_friction": {
+            "label": "Viscosity",
+            "description": "The stifling, suffocating atmosphere of the urban sprawl that slows down escape and investigation.",
+            "value": 0.888
+          },
+          "protagonist_integrity": {
+            "label": "Moral Resolve",
+            "description": "The structural soundness of the protagonist's conscience against the predatory pressure of the Big Bad.",
+            "value": 0.6929
+          },
+          "narrative_credit": 1.5213999999999999
+        },
+        "GRAPH": {
+          "nodes": [
+            {
+              "id": "The Fired-Clay Redoubt",
+              "type": "LOCATION",
+              "description": "A fortified structure of kiln-fired brick and iron, designed for thermal resistance.",
+              "weight": 0.513,
+              "latent": false
+            },
+            {
+              "id": "The Predator",
+              "type": "ANTAGONIST",
+              "description": "A massive, relentless entity with high lung capacity and mechanical movement.",
+              "weight": 0.487,
+              "latent": false
+            }
+          ],
+          "edges": [
+            {
+              "source": "The Predator",
+              "target": "The Fired-Clay Redoubt",
+              "relation": "ASSAULT",
+              "weight": 0.9,
+              "directional": true
+            }
+          ]
+        },
+        "ACTIVE_PINS": [
+          "The Fired-Clay Redoubt"
+        ],
+        "NARRATIVE_DEBT": [
+          "Establish the predator's physical presence",
+          "Demonstrate the failure of the first two material types"
+        ],
+        "GAME_LOG": [],
+        "AUDIT_LOG": [],
+        "CURRENT_GOAL": "Establish the final confrontation at the Fired-Clay Redoubt",
+        "GRAND_OBJECTIVE": "Secure the youngest sibling's masonry bunker against the final assault.",
+        "INTENSITY": 9.0714,
+        "BANNED_TERMS": [
+          "huff and puff",
+          "straw house",
+          "stick house",
+          "brick house",
+          "little piggies",
+          "fairytale",
+          "happily ever after",
+          "wolf at the door"
+        ],
+        "SIGNIFICANCE_MAP": {
+          "The Switchgrass Perimeter": 2
+        },
+        "CAUSAL_DEBT_LEDGER": 0,
+        "TITLE": "The Sieve and the Kiln",
+        "LOGLINE": "In a desolate coastal scrubland, three siblings must engineer thermal and structural defenses against a starving apex predator with concussive lung capacity.",
+        "WORLD_LOGIC": "Caloric desperation dictates all movement. Structures are not homes, but defensive perimeters. The predator utilizes atmospheric pressure as a primary breach tool.",
+        "PILLARS": [
+          "Material failure",
+          "Biological predation",
+          "Structural engineering as survival"
+        ],
+        "TICK": 2,
+        "AXIOMS": {
+          "currency": "Reputation",
+          "friction": "Viscosity",
+          "penalty": "Causal Debt",
+          "recoveryRate": 0.2,
+          "isTransactional": true
+        },
+        "GENETIC_ANCHOR": "{\"PHASE\":\"First Breach\",\"GENRE\":\"Survival Horror\",\"INTENT\":\"Reimagine the classic fable as a study in physical collapse.\",\"CURRENT_GOAL\":\"Establish the vulnerability of the first structure and the arrival of the antagonist.\",\"INTENSITY\":7,\"AESTHETICS\":{\"STYLE\":\"Hard Realism\",\"VOICE\":{\"density\":0.85,\"metaphorFrequency\":0.2,\"primary\":\"Observational\"}}}",
+        "WORLD_ENTITIES": {
+          "mayor_001": {
+            "id": "mayor_001",
+            "name": "Mayor of Oakhaven",
+            "lod": "Vector",
+            "phase": "Diplomatic",
+            "goal": "Maintain order",
+            "metrics": {
+              "affinity": 0.5,
+              "fear": 0.1,
+              "debt": 0
+            },
+            "memory": [
+              "The Fired-Clay Redoubt",
+              "The Switchgrass Perimeter"
+            ],
+            "lastInteractionTick": 0,
+            "memoryWeights": {
+              "The Switchgrass Perimeter": 0.9168
+            }
+          },
+          "dragon_001": {
+            "id": "dragon_001",
+            "name": "The Obsidian Drake",
+            "lod": "Manifold",
+            "phase": "Slumber",
+            "goal": "Guard the hoard",
+            "metrics": {
+              "tension": 0.2,
+              "hunger": 0.1
+            },
+            "strategy": {
+              "counter_measure": 0.1
+            },
+            "lastInteractionTick": 0,
+            "memoryWeights": {}
+          }
+        },
+        "BANNED_TERMS_VIOLATED": false
+      },
+      "usage": {
+        "input": 1307,
+        "output": 88,
+        "total": 1395
+      },
+      "criticSuggestion": null,
+      "timestamp": 1773220852249
+    }
+  ],
+  "exportedAt": "2026-03-11T09:21:34.626Z"
+}
