@@ -1,71 +1,116 @@
-# Cromer Narrative Engine (Pantomime Protocol v1.1)
+# Cromer Narrative Engine (CNE): Pantomime Protocol v1.1
 
-The Cromer Narrative Engine is a high-density, state-managed narrative generator designed for interactive fiction, RPG mechanics, and NPC logic. It treats narrative as a dynamic system governed by mathematical constraints, implementing the Pantomime Protocol to ensure causal consistency, consequence, and thematic depth over long context windows.
+The Cromer Narrative Engine is a mathematically grounded framework for managing
+narrative consistency and state persistence in long-context AI environments.
+It treats storytelling as a **Physical Manifold**, where every narrative choice
+incurs a measurable "cost" known as **Causal Debt**.
 
-## 1. Tiered Physics Architecture
+## Core Mathematical Framework
 
-The narrative physics system utilizes Dynamic Initialization, eliminating hardcoded cartridges in favor of a genre-aware, AI-driven schema.
+The engine enforces coherence by evaluating the divergence between the current
+narrative state and the proposed delta.
 
-### Tier 1 (Core Constants)
-Immutable narrative drivers that govern fundamental story flow across all genres:
-* `causal_debt`: Logical debt from improbable actions.
-* `progression`: Overall story progress (0.0 to 1.0).
-* `pacing`: Speed of narrative delivery.
-* `introspection_density`: Ratio of internal thought to external action.
-* `action_intensity`: Kinetic energy of the current scene.
+### 1. Causal Debt Evaluation \(D_c\)
 
-### Tier 2 (Translatable Variables)
-Abstract categories mapped to genre-specific labels via a Semantic Facade (e.g., `primary_resource` dynamically maps to "Mana" in Fantasy or "Credits" in Cyberpunk):
-* `primary_resource`: The main consumable or metric of power.
-* `environmental_friction`: The resistance the world exerts on the protagonist.
-* `protagonist_integrity`: The physical or mental state of the main character.
+Before a state transition is finalized, the engine calculates the **Impulse**
+\(I\), representing the Euclidean distance between states:
 
-## 2. The Narrative Manifold (Mathematical Operators)
+\[
+I = \sqrt{\left(\frac{Int_{target} - Int_{current}}{10}\right)^2 +
+\sum_{k \notin L} (P_{target}[k] - P_{current}[k])^2}
+\]
 
-The engine relies on the Narrative Manifold to process state changes and enforce logic.
+From this, we derive the **Base Debt** \(D_{base}\), which accounts for
+narrative viscosity \(\eta\), momentum \(\gamma\), and exogenous source terms
+\(Ex\):
 
-### Causal Debt Evaluation ($D_c$)
-Calculates the logical "cost" of every action. Improbable actions spike the Euclidean distance ($I$) and generate debt, which must be amortized ($A$) through narrative consequences (e.g., structural destruction, physical injury).
+\[
+D_{base} = \max(0, I - 0.05\eta\gamma - 2Ex)
+\]
 
-**Impulse Calculation:**
-$$I = \sqrt{ \left(\frac{Int_{target} - Int_{current}}{10}\right)^2 + \sum_{k \notin L} (P_{target}[k] - P_{current}[k])^2 }$$
-*(Where $L$ represents ledger terms exempt from stasis calculations)*
+The final **Causal Debt** \(D_c\) is resolved through narrative amortization
+\(A\), ensuring that every deviation from the established logic has a
+proportional consequence:
 
-**Base Debt:**
-$$D_{base} = \max(0, I - 0.05\eta\gamma - 2Ex)$$
-*(Where $\eta$ is viscosity, $\gamma$ is narrative momentum, and $Ex$ is the exogenous source term)*
+\[
+D_c = \max(0, D_{base} - A)
+\]
 
-**Final Causal Debt:**
-$$D_c = \max(0, D_{base} - A)$$
+### 2. State Composition Operator \(\oplus\)
 
-### The Composition Operator ($\oplus$)
-Merges "Delta States" (AI suggestions) into the "Engine State" using weighted variance ($v = 1 + 0.5\chi$), ensuring smooth transitions in world physics.
+Updates to the Engine State \(P\) are processed via a weighted variance \(v\) to
+maintain physical and behavioral stability:
 
-**Intensity Update:**
-$$Int_{t+1} = Int_t + (Int_{\Delta} - Int_t) \cdot w \cdot v$$
+- Weighted variance: \(v = 1 + 0.5\chi\)
+- Intensity update: \(Int_{t+1} = Int_t + (Int_\Delta - Int_t) \cdot w \cdot v\)
+- Parameter update: \(P_{t+1} = P_t + (P_\Delta - P_t) \cdot \sqrt{w} \cdot v\)
 
-**Physics Parameter Update:**
-$$P_{t+1} = P_t + (P_{\Delta} - P_t) \cdot \sqrt{w} \cdot v$$
-*(Where $w$ is the significance weight based on node reuse frequency)*
+\(w\) is the significance weight determined by node reuse frequency within the
+CNE graph.
 
-## 3. Game Mechanics: Narrative Credit System
+### 3. Narrative Credit System \(C\)
 
-Narrative Credit ($C$) is capped at 10 and increases when debts are resolved or progression milestones are reached.
+Coherence is rewarded through a credit system capped at 10, facilitating future
+high-impulse transitions as debts are successfully resolved:
 
-**Milestone Calculation:**
-$$M = \lfloor P / 0.2 \rfloor$$
+\[
+C_{t+1} = \min(10, C_t + \Delta C_{debt} + \Delta C_{prog})
+\]
 
-**Credit Update Function:**
-$$C_{t+1} = \min(10, C_t + \Delta C_{debt} + \Delta C_{prog})$$
-*(Where $\Delta C_{debt} = 1$ if total active debts decrease, and $\Delta C_{prog} = 1$ if $M_{t+1} > M_t$)*
+## Implementation Philosophy
 
-## 4. Semantic Translation Layer
+- **Zero-hallucination threshold**: By enforcing \(D_c\) limits, the CNE
+  prevents "character drift" in long-context windows (tested up to 146k
+  tokens).
+- **Thermodynamic narrative**: The use of viscosity and momentum ensures that
+  the narrative has "weight," preventing abrupt, illogical character pivots.
 
-Translates raw numeric data from the physics state into Semantic Directives for the LLM. Values are normalized against a defined maximum (1.0).
+## Licensing
 
-| Normalized Range | Semantic Tier |
-| :--- | :--- |
-| < 0.3 | **DORMANT** |
-| 0.3 to < 0.6 | **RISING** |
-| 0.6 to < 0.9 | **ACUTE** |
-| 0.9 to 1.0 | **CRITICAL** |
+This project is licensed under a **dual-license model**:
+
+- GPLv3: For open-source, non-commercial use.
+- Commercial license: For enterprise integration and closed-source
+  applications. Contact the maintainer for terms.
+
+## Attribution for Published Works
+
+If you use the Cromer Narrative Engine (CNE) or any implementation of the
+Pantomime Protocol to create works that are publicly distributed
+(e.g. books, games, interactive fiction, or commercial narrative
+experiences), you must provide reasonable attribution in the
+accompanying credits, colophon, or documentation.
+
+A suitable attribution is:
+
+“Powered by the Cromer Narrative Engine (Pantomime Protocol v1.1)”
+
+or a substantially similar phrase that mentions both “Cromer Narrative
+Engine” and “Pantomime Protocol v1.1”.
+
+This attribution requirement does **not** grant any rights over the
+content of your work; it applies only to the use of the engine itself.
+
+The demo app includes “optional provenance watermarking”
+---
+
+## Demo PWA and AI Studio App
+
+<div align="center">
+  <img width="1200" height="475" alt="GHBanner"
+       src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
+
+This repository also contains everything you need to run the demo app locally.
+
+View the app in AI Studio:
+https://ai.studio/apps/75acf0cb-171e-430c-842e-ead67bed8179
+
+### Run locally
+
+**Prerequisite:** Node.js
+
+1. Install dependencies:
+
+   ```bash
+   npm install

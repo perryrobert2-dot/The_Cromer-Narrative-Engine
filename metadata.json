@@ -1,0 +1,5 @@
+{
+  "name": " Cromer Narrative Engine V 6",
+  "description": "A state-managed, high-density fiction generator using the Cromer v2.0 protocol.",
+  "requestFramePermissions": []
+}

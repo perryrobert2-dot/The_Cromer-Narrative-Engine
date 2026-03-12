@@ -1,0 +1,17 @@
+/* Global Styles */
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure select options are visible in dark mode across browsers */
+select option {
+  background-color: #0f172a !important; /* slate-900 */
+  color: #e2e8f0 !important; /* slate-200 */
+}
