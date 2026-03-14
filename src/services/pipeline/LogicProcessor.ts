@@ -1,6 +1,6 @@
-import { Type } from "@google/genai";
+import { Type, ThinkingLevel } from "@google/genai";
 import { EngineState, NarrativeMode, AuditFlag, StorySegment, PhysicsPayload, DEFAULT_STATE } from '../../../types';
-import { CORE_BANNED_TERMS, MODEL_FLASH_LITE } from '../../../constants';
+import { CORE_BANNED_TERMS, MODEL_PRO } from '../../../constants';
 import { getComputeInstruction } from '../../../src/constants/prompts';
 import { generateNextSegment } from '../../../services/gemini';
 import { parseResponse } from '../../utils/parser';
@@ -55,10 +55,21 @@ export class LogicProcessor {
       type: Type.OBJECT,
       properties: {
         PHASE: { type: Type.STRING },
+        PHASE_TICKS: { type: Type.NUMBER },
         CURRENT_GOAL: { type: Type.STRING },
         INTENSITY: { type: Type.NUMBER },
         BANNED_TERMS_VIOLATED: { type: Type.BOOLEAN },
         ACTIVE_PINS: { type: Type.ARRAY, items: { type: Type.STRING } },
+        FAIL_SAFES: {
+          type: Type.OBJECT,
+          properties: {
+            STALL_PROTECTION: { type: Type.STRING },
+            MAX_PHASE_DURATION: { type: Type.NUMBER },
+            LOOP_PENALTY: { type: Type.STRING },
+            TRANSITION_PRIORITY: { type: Type.ARRAY, items: { type: Type.STRING } },
+            OVERRIDE_CONDITION: { type: Type.STRING }
+          }
+        },
         GRAPH: {
           type: Type.OBJECT,
           properties: {
@@ -128,18 +139,51 @@ Blacklist: ${blacklist.join(', ')}
     const computeRes = await generateNextSegment(
       historyForCompute.slice(-5), 
       undefined, 
-      getComputeInstruction(physicsVars) + "\n" + computePrompt, 
-      MODEL_FLASH_LITE,
+      getComputeInstruction(physicsVars, narrativeMode) + "\n" + computePrompt, 
+      MODEL_PRO,
       {
         responseMimeType: "application/json",
         responseSchema: computeSchema,
-        temperature: 0.1
+        temperature: 0.1,
+        thinkingLevel: ThinkingLevel.HIGH
       }
     );
     
     const parsedCompute = parseResponse(computeRes.text);
     let logicalTarget = parsedCompute.state || engineState;
     const auditFlags: AuditFlag[] = [];
+
+    // Narrative Governor: Length-specific constraints
+    const isLongStory = narrativeMode === 'Novel' || narrativeMode === 'Open Ended Web Serial';
+    
+    // Causal Debt Penalty (Epic/Long stories)
+    if (isLongStory && (logicalTarget.PHYSICS.causal_debt || 0) > 0.4) {
+      logicalTarget.PHYSICS.progression = engineState.PHYSICS.progression; // Zero progression
+      logicalTarget.PHASE = "RECOVERY TICK (Debt Mitigation)";
+      logicalTarget.CURRENT_GOAL = `[RECOVERY] Focus on environmental friction or internal processing to mitigate causal debt.`;
+    }
+
+    // Slow-Burn Mandate (Long stories)
+    if (isLongStory) {
+      const introspection = logicalTarget.PHYSICS.introspection_density || 0;
+      const backgroundNodes = (logicalTarget.GRAPH?.nodes || []).filter(n => 
+        n.type === 'background_context' || 
+        n.id.toLowerCase().includes('background')
+      );
+      const backgroundWeight = backgroundNodes.length > 0 
+        ? backgroundNodes.reduce((acc, n) => acc + (n.weight || 0), 0) / backgroundNodes.length 
+        : 0;
+      
+      if (introspection < 0.5 || backgroundWeight < 0.5) {
+        // Prevent progression if not enough introspection or background context
+        if ((logicalTarget.PHYSICS.progression || 0) > (engineState.PHYSICS.progression || 0)) {
+           logicalTarget.PHYSICS.progression = engineState.PHYSICS.progression;
+           if (!logicalTarget.PHASE.includes('RECOVERY')) {
+             logicalTarget.PHASE = "SLOW-BURN (Context Building)";
+           }
+        }
+      }
+    }
 
     // Phase Guard
     const terminalPhases = ['termination', 'resolution', 'ending', 'epilogue', 'climax', 'final'];
@@ -207,6 +251,31 @@ Blacklist: ${blacklist.join(', ')}
     targetState.SIGNIFICANCE_MAP = { ...engineState.SIGNIFICANCE_MAP, [activeNode]: newFreq };
     targetState.TICK = (engineState.TICK || 0) + 1;
     targetState = NarrativeManifold.normalizeGraph(targetState);
+
+    // --- FAIL-SAFE INTEGRATION ---
+    
+    // 1. Tick-Cap Monitor
+    if (targetState.PHASE === engineState.PHASE) {
+      targetState.PHASE_TICKS = (engineState.PHASE_TICKS || 0) + 1;
+    } else {
+      targetState.PHASE_TICKS = 0;
+    }
+
+    const maxTicks = targetState.FAIL_SAFES?.MAX_PHASE_DURATION || 5;
+    if (targetState.PHASE_TICKS > maxTicks && targetState.PHYSICS.progression < 0.2) {
+      targetState.PHASE = "FORCED_PHASE_EVOLUTION (Tick-Cap Triggered)";
+      targetState.CURRENT_GOAL = "STALL DETECTED: Execute a Narrative Leap (e.g., a 15-year time skip) regardless of current scene completion.";
+      targetState.PHYSICS.progression = 0.5;
+      targetState.PHYSICS.introspection_density = 0.1; // Kill introspection
+    }
+
+    // 2. Narrative Debt Ejection Seat
+    if (targetState.PHYSICS.causal_debt < 0.2 && targetState.PHYSICS.pacing < 0.4 && targetState.TICK > 5) {
+      targetState.PHASE = "CONTEXT_SHATTER (Debt Ejection Triggered)";
+      targetState.CURRENT_GOAL = "LOW DEBT STALL: Terminate current character perspective and jump to the next ACTIVE_PIN on the mind map with a 'Time-Jump' header.";
+      targetState.PHYSICS.pacing = 0.8;
+      targetState.PHYSICS.causal_debt = 0.5; // Inject some debt to resolve
+    }
 
     // Narrative LOD: Simulate background entities
     targetState.WORLD_ENTITIES = this.simulateWorld(targetState, deltaDebt);

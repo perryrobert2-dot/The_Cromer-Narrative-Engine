@@ -11,15 +11,16 @@ export interface AuditFlag {
 export type GenreProfile = 'Noir/Procedural' | 'LitRPG/Progression' | 'Speculative/Sociological' | 'High-Density Action';
 
 export interface VoiceProfile {
-  primary: string; // e.g., "Damien Boyd"
-  blend?: string;   // e.g., "Terry Pratchett"
-  density: number; // 0.0 to 1.0
+  primary: string; // e.g., "Hard-boiled"
+  density: number; // 0.0 to 1.0 (Sparse to Ornate)
   metaphorFrequency: number; // 0.0 to 1.0
+  temperature: number; // 0.0 to 1.0 (Clinical to Empathetic)
+  abstractness: number; // 0.0 to 1.0 (Concrete to Surreal)
 }
 
 export interface TapestryNode {
   id: string;
-  type: 'entity' | 'concept' | 'attribute' | 'item' | 'location' | 'psychological';
+  type: 'entity' | 'concept' | 'attribute' | 'item' | 'location' | 'psychological' | 'background_context';
   description: string;
   weight: number; // 0.0 to 1.0
   latent?: boolean; // If true, it's an "Accidental Chekhov" waiting to be activated
@@ -98,13 +99,23 @@ export interface AxiomDefinition {
   isTransactional: boolean;   // If true, resources pay for intensity
 }
 
+export interface FailSafeConfig {
+  STALL_PROTECTION: string;
+  MAX_PHASE_DURATION: number;
+  LOOP_PENALTY: string;
+  TRANSITION_PRIORITY: string[];
+  OVERRIDE_CONDITION: string;
+}
+
 export interface EngineState extends CoreState {
   PHASE: string;
+  PHASE_TICKS: number;
   GENRE: string; // Can be hybrid like "Noir + System Apocalypse"
   INTENT: NarrativeIntent;
   AESTHETICS: Aesthetics;
   PHYSICS: PhysicsPayload;
   AXIOMS?: AxiomDefinition;
+  FAIL_SAFES?: FailSafeConfig;
   
   // Meta/System variables
   NARRATIVE_DEBT: string[];
@@ -163,6 +174,7 @@ export interface StorySegment {
   id: string;
   role: 'user' | 'model';
   text: string;
+  image?: string; // Base64 encoded image data
   summary?: string;
   thought?: string;
   state?: EngineState;
@@ -192,11 +204,12 @@ export type GenerationStage = 'IDLE' | 'ARCHITECT' | 'CALCULATOR' | 'SUBVERSIVE'
 
 export const DEFAULT_STATE: EngineState = {
   PHASE: "0 - Initialization",
-  GENRE: 'Noir/Procedural',
-  INTENT: 'Gritty',
+  PHASE_TICKS: 0,
+  GENRE: 'Generic/Adaptive',
+  INTENT: 'Epic',
   AESTHETICS: {
     STYLE: "Neutral/Adaptive",
-    VOICE: { primary: 'J. Arthur Crank', density: 0.7, metaphorFrequency: 0.3 }
+    VOICE: { primary: 'Observant', density: 0.5, metaphorFrequency: 0.5, temperature: 0.5, abstractness: 0.2 }
   },
   PHYSICS: {
     causal_debt: 0,
@@ -204,10 +217,20 @@ export const DEFAULT_STATE: EngineState = {
     pacing: 0.5,
     introspection_density: 0.5,
     action_intensity: 0.5,
-    primary_resource: { label: 'Evidence', value: 0, description: 'Clues collected' },
-    environmental_friction: { label: 'Bureaucracy', value: 0.5, description: 'Police red tape' },
-    protagonist_integrity: { label: 'Sobriety', value: 1.0, description: 'Mental clarity' },
+    primary_resource: { label: 'Resource', value: 0.5, description: 'Primary narrative energy' },
+    environmental_friction: { label: 'Friction', value: 0.5, description: 'World resistance' },
+    protagonist_integrity: { label: 'Integrity', value: 1.0, description: 'Protagonist stability' },
     narrative_credit: 3
+  },
+  FAIL_SAFES: {
+    STALL_PROTECTION: "Active",
+    MAX_PHASE_DURATION: 5,
+    LOOP_PENALTY: "Increase Temperature +0.4",
+    TRANSITION_PRIORITY: [
+      "Temporal Leap (e.g., 15 Years)",
+      "Perspective Shift (e.g., Secondary Character)"
+    ],
+    OVERRIDE_CONDITION: "If current character/scene count > 3 turns without progression, execute 'Context Shatter' sequence."
   },
   GRAPH: { nodes: [], edges: [] },
   ACTIVE_PINS: [],

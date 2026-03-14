@@ -6,6 +6,7 @@ import NarrativeLog from './components/NarrativeLog';
 import ControlDeck from './components/ControlDeck';
 import StateBoard from './components/StateBoard';
 import LibraryModal from './components/LibraryModal';
+import NarrativeWizard from './components/NarrativeWizard';
 
 // Hooks
 import { useTTS } from './hooks/useTTS';
@@ -57,7 +58,8 @@ const App: React.FC = () => {
     handleRestoreState,
     handleImportJSON,
     handleIngestNovel,
-    handleGenerateCoverImage
+    handleGenerateCoverImage,
+    handleInitialize
   } = useCromerEngine({
     speak,
     stopSpeaking,
@@ -76,6 +78,10 @@ const App: React.FC = () => {
 
   return (
     <div className="flex h-[100dvh] w-screen bg-slate-950 text-slate-200 overflow-hidden relative">
+      {segments.length === 0 && !isLoading && (
+        <NarrativeWizard onInitialize={handleInitialize} />
+      )}
+      
       <LibraryModal isOpen={isLibraryOpen} onClose={() => setIsLibraryOpen(false)} onLoadStory={handleLoadStory} onNewStory={handleNewStory} />
       
       <button onClick={() => setSidebarOpen(!sidebarOpen)} className="md:hidden absolute top-4 right-4 z-50 bg-slate-800/90 backdrop-blur p-2 rounded text-slate-200 border border-slate-700">

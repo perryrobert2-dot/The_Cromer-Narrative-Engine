@@ -171,6 +171,11 @@ const NarrativeLog: React.FC<NarrativeLogProps> = ({ segments, isLoading, onAppl
                       ? 'bg-slate-900 border border-slate-800 p-4 rounded-tl-xl rounded-bl-xl rounded-br-xl text-slate-300 font-mono text-sm' 
                       : 'font-serif text-slate-200 text-lg md:text-xl pl-4 border-l-2 border-slate-800 leading-relaxed'
                   }`}>
+                    {seg.image && (
+                      <div className="mb-4 rounded-lg overflow-hidden border border-slate-700 max-w-sm">
+                        <img src={seg.image} alt="User context" className="w-full h-auto object-contain" referrerPolicy="no-referrer" />
+                      </div>
+                    )}
                     {showThoughtId === seg.id && seg.thought && (
                         <div className="mb-4 p-3 bg-slate-900/50 border border-amber-900/30 rounded text-[11px] font-mono text-amber-200/70 leading-normal animate-in fade-in slide-in-from-top-1">
                             <div className="flex items-center gap-2 mb-1 text-amber-500/50 text-[9px] uppercase tracking-widest">

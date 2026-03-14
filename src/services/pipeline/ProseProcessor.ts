@@ -1,6 +1,8 @@
+import { Type, ThinkingLevel } from "@google/genai";
 import { EngineState, StorySegment, NarrativeMode, AuditFlag, TokenUsage } from '../../../types';
 import { getSystemInstruction } from '../../constants/prompts';
 import { generateNextSegment, generateAuditAnalysis, generateCorrection } from '../../../services/gemini';
+import { MODEL_NAME, MODEL_PRO } from '../../../constants';
 import { parseResponse } from '../../utils/parser';
 import { NarrativeManifold } from '../../utils/manifold';
 import { cleanProse } from '../../utils/cleaner';
@@ -11,7 +13,9 @@ export class ProseProcessor {
     effectiveInput: string,
     historyForCompute: StorySegment[],
     narrativeMode: NarrativeMode,
-    engineState: EngineState
+    engineState: EngineState,
+    image?: string,
+    tempOverride?: number
   ): Promise<{ content: string, thought?: string, usage?: TokenUsage, auditFlags: AuditFlag[] }> {
     
     const renderPrompt = `
@@ -28,7 +32,13 @@ Write next narrative block. Refer to SCHEMA for definitions.
     const renderRes = await generateNextSegment(
       historyForCompute.slice(-5), 
       undefined, 
-      getSystemInstruction(narrativeMode, targetState) + "\n" + renderPrompt
+      getSystemInstruction(narrativeMode, targetState) + "\n" + renderPrompt,
+      MODEL_NAME,
+      {
+        thinkingLevel: ThinkingLevel.LOW,
+        temperature: tempOverride ?? 0.9
+      },
+      image
     );
     
     const parsedRender = parseResponse(renderRes.text);

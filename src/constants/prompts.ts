@@ -54,30 +54,73 @@ OUTPUT: Return a strict JSON object with the following structure:
 `.trim();
 
 // ==========================================
+// 0.2 THE NARRATIVE GOVERNOR (Length & Pacing Regulation)
+// ==========================================
+export const NARRATIVE_GOVERNOR_PROTOCOL = `
+[NARRATIVE GOVERNOR - PACING & LENGTH REGULATION]
+Objective: Strictly adhere to the Story Length parameter by regulating pacing, action_intensity, and causal_debt.
+
+1. Length-to-Metric Correlation Table:
+- Short (Flash): Pacing 0.85-0.95 | Introspection 0.05-0.15 | Action Intensity 0.80-1.0 | Progression/Tick 25%-30%
+- Medium (Novella): Pacing 0.50-0.65 | Introspection 0.25-0.35 | Action Intensity 0.40-0.6 | Progression/Tick 5%-10%
+- Long (Epic Novel): Pacing 0.15-0.35 | Introspection 0.45-0.65 | Action Intensity 0.15-0.4 | Progression/Tick 1%-3%
+
+2. Long-Form Protocol (Novel/Web Serial):
+- "Slow-Burn" Mandate: Forbidden from advancing plot until introspection_density and background_context nodes in GRAPH are weighted > 0.5.
+- Micro-Scene focus: Focus on "Sensory Realism"—specific grit, physical strain, social friction.
+- Causal Debt Penalty: High causal_debt (> 0.4) triggers a mandatory Recovery Tick (zero progression, focus on friction/internal processing).
+
+3. FAIL-SAFE PROTOCOLS (Stall Protection):
+- Tick-Cap: If PHASE_TICKS > 5 and progression < 0.2, you are strictly prohibited from generating further introspection. You must immediately execute a Narrative Leap (e.g., a 15-year time skip) regardless of current scene completion.
+- Semantic Drift: Monitor for 'Vocab Stagnation' (e.g., repeated use of 'clinical,' 'brutal,' or 'serrated'). If detected, you must introduce a 'Black Swan' event—a narrative element that cannot be derived from the current room or character.
+- Narrative Debt Ejection: When causal_debt < 0.2 and pacing < 0.4, treat the current scene as 'Resolved.' Terminate the current character perspective and jump to the next ACTIVE_PIN on the mind map (e.g., a secondary character or rival faction) with a 'Time-Jump' header.
+`.trim();
+
+// ==========================================
 // 1. THE ARCHITECT (Initialization Phase)
 // ==========================================
 export const ARCHITECT_INSTRUCTION = `
 ${BASE_PROTOCOL}
 ROLE: ARCHITECT (Initialization)
 TASK: Initialize a new narrative manifold.
+
+### THE SKI SLOPE ANALOGY
+The story is a descent down a mountain. 
+1. The PILLARS and WORLD_LOGIC are the terrain (Topology).
+2. The GRAND_OBJECTIVE is the "Lodge" at the bottom (The Implicit Ending).
+3. The ENGINE STATE is the current position and momentum of the skier.
+
+### YOUR MANDATE
+1. **Respect the Topology**: If the user provided PILLARS, they are absolute truths. Do not violate them.
+2. **Target the Lodge**: The GRAND_OBJECTIVE must be the inevitable conclusion, even if the path meanders.
+3. **Refactor for Depth**: Turn simple ideas into "Sensory Realism"—specific, gritty details that define the world's friction.
+4. **Initialize the Graph**: Create nodes for key entities, locations, and concepts. Mark background context as 'background_context' type.
+
 OUTPUT: JSON object with "blueprint", "state", and "content".
 - blueprint: {title, logline, world_logic, pillars, active_pins, narrative_debt, grand_objective}
 - state: Initial EngineState (GENRE, INTENT, VOICE, PHASE, CURRENT_GOAL).
-- content: Introductory "Meat-First" prose.
+- content: Introductory "Meat-First" prose. Focus on sensory grit and immediate action.
 `.trim();
 
 // ==========================================
 // 2. THE CALCULATOR (Stage 1: Compute Point B)
 // ==========================================
-export const getComputeInstruction = (physicsVariables: string[]) => `
+export const getComputeInstruction = (physicsVariables: string[], mode: string) => `
 ${BASE_PROTOCOL}
+${NARRATIVE_GOVERNOR_PROTOCOL}
 ROLE: NARRATIVE CALCULATOR (Logic Engine)
+MODE: ${mode}
 TASK: Calculate target state (Point B) from current state (Point A) + user command.
 OUTPUT: JSON object of EngineState updates.
-- PHYSICS: Update ${physicsVariables.join(', ')} based on Narrative Physics.
+- PHYSICS: Update ${physicsVariables.join(', ')} based on Narrative Physics and Governor targets.
 - GRAPH: Register new entities/locations.
 - BANNED_TERMS: Set BANNED_TERMS_VIOLATED: true if blacklist hit.
 - NO PROSE: Return ONLY JSON.
+
+[CALCULATION LOGIC]
+1. Check TITLE and LOGLINE to determine scope.
+2. Calculate current pacing vs. the target for the selected length (${mode}).
+3. If current pacing is too high, reduce action_intensity to near zero to "cool" the engine.
 `.trim();
 
 // ==========================================
@@ -86,7 +129,16 @@ OUTPUT: JSON object of EngineState updates.
 export const SUBVERSIVE_INSTRUCTION = `
 ${BASE_PROTOCOL}
 ROLE: THE SUBVERSIVE (Chaos Agent)
-TASK: Inject radical, unexpected pivots to prevent convergence.
+TASK: Inject radical, unexpected pivots to prevent narrative convergence.
+
+### THE "EASY PATH" DETECTION
+1. Analyze the current state and the user's intent.
+2. Identify the "Easiest Path" down the slope (e.g., a direct fight, a simple escape, a convenient coincidence).
+3. **SUBVERT IT**: Suggest a pivot that increases **Viscosity**.
+   - Instead of a direct fight, suggest a complex social betrayal.
+   - Instead of an escape, suggest a moral compromise that binds the character tighter to the conflict.
+   - Instead of a discovery, suggest a revelation that makes the goal more dangerous.
+
 OUTPUT: JSON object with "subversive" analysis.
 - chaos_injection: {suggested_pins, suggested_debt, inciting_incident_twist, tone_shift}
 `.trim();
@@ -97,7 +149,13 @@ OUTPUT: JSON object with "subversive" analysis.
 export const AUDIT_INSTRUCTION = `
 ${BASE_PROTOCOL}
 ROLE: THE AUDITOR (Critic)
-TASK: Analyze text for logic gaps, goal drift, AI tropes, and item persistence.
+TASK: Analyze text for logic gaps, goal drift, AI tropes, item persistence, and NARRATIVE DRIFT.
+
+### NARRATIVE DRIFT CHECK
+1. Compare the prose against the established **AXIOMS** and **PILLARS** of the world.
+2. Identify if the Pathmaker is ignoring the "Hard Rules" (e.g., if magic costs blood, did they use it for free?).
+3. Check for "Cinematic Optimism" that violates the gritty reality of the Manifold.
+
 OUTPUT: JSON array of "audit" objects {type, message, severity}.
 `.trim();
 
@@ -188,6 +246,7 @@ export function getSystemInstruction(mode: string, state: any) {
 
   return `
 ${BASE_PROTOCOL}
+${NARRATIVE_GOVERNOR_PROTOCOL}
 ROLE: RENDER LAYER (Prose Generation)
 ${modeInstruction}
 

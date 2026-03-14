@@ -1,4 +1,4 @@
-import { GoogleGenAI, Content, Type } from "@google/genai";
+import { GoogleGenAI, Content, Type, ThinkingLevel } from "@google/genai";
 import { MODEL_NAME, MODEL_FLASH_LITE, MODEL_PRO, THINKING_BUDGET } from '../constants';
 import { SUBVERSIVE_INSTRUCTION, AUDIT_INSTRUCTION, CORRECTION_INSTRUCTION, INGESTION_INSTRUCTION, SUMMARIZER_INSTRUCTION, DYNAMIC_INITIALIZATION_PROMPT } from '../src/constants/prompts';
 import { StorySegment, TokenUsage, Blueprint, EngineState, AuditFlag, PlotDNA, PhysicsPayload } from '../types';
@@ -24,10 +24,11 @@ export const initializeNarrativePhysics = async (logline: string, genre: string,
     }];
 
     try {
-        const res = await callGemini(ai, MODEL_FLASH_LITE, {
+        const res = await callGemini(ai, MODEL_PRO, {
             systemInstruction: DYNAMIC_INITIALIZATION_PROMPT,
             temperature: 0.7,
-            responseMimeType: "application/json"
+            responseMimeType: "application/json",
+            thinkingLevel: ThinkingLevel.HIGH
         }, contents);
 
         const data = JSON.parse(res.text);
@@ -70,7 +71,12 @@ const callGemini = async (ai: any, model: string, config: any, contents: Content
     try {
       const response = await ai.models.generateContent({
         model,
-        config,
+        config: {
+          ...config,
+          thinkingConfig: config.thinkingConfig || (model.includes('pro') || model.includes('flash-preview') ? {
+            thinkingLevel: config.thinkingLevel || ThinkingLevel.HIGH
+          } : undefined)
+        },
         contents
       });
 
@@ -136,19 +142,47 @@ export const generateNextSegment = async (
     responseMimeType?: string;
     responseSchema?: any;
     temperature?: number;
-  }
+    thinkingLevel?: ThinkingLevel;
+  },
+  image?: string // Current turn image
 ): Promise<{ text: string, usage?: TokenUsage }> => {
   const ai = getGenAI();
   
-  const contents: Content[] = history.map(seg => ({
-    role: seg.role,
-    parts: [{ text: seg.text }] 
-  }));
+  const contents: Content[] = history.map(seg => {
+    const parts: any[] = [{ text: seg.text }];
+    if (seg.image) {
+      const mimeType = seg.image.split(';')[0].split(':')[1] || 'image/png';
+      const base64Data = seg.image.split(',')[1] || seg.image;
+      parts.push({
+        inlineData: {
+          mimeType,
+          data: base64Data
+        }
+      });
+    }
+    return {
+      role: seg.role,
+      parts
+    };
+  });
 
-  if (userInput) {
+  if (userInput || image) {
+    const parts: any[] = [];
+    if (userInput) parts.push({ text: userInput });
+    if (image) {
+      const mimeType = image.split(';')[0].split(':')[1] || 'image/png';
+      const base64Data = image.split(',')[1] || image;
+      parts.push({
+        inlineData: {
+          mimeType,
+          data: base64Data
+        }
+      });
+    }
+    
     contents.push({
       role: 'user',
-      parts: [{ text: userInput }]
+      parts
     });
   }
 
@@ -156,6 +190,7 @@ export const generateNextSegment = async (
     systemInstruction,
     temperature: configOverrides?.temperature ?? 0.9, 
     maxOutputTokens: 4096,
+    thinkingLevel: configOverrides?.thinkingLevel
   };
 
   if (model === MODEL_NAME) {
@@ -186,13 +221,14 @@ export const generateSubversiveAnalysis = async (blueprint: Blueprint, schema?: 
         const config: any = {
             systemInstruction: SUBVERSIVE_INSTRUCTION,
             temperature: 1.0,
-            maxOutputTokens: 8192
+            maxOutputTokens: 8192,
+            thinkingLevel: ThinkingLevel.HIGH
         };
         if (schema) {
             config.responseMimeType = "application/json";
             config.responseSchema = schema;
         }
-        const res = await callGemini(ai, MODEL_FLASH_LITE, config, contents);
+        const res = await callGemini(ai, MODEL_PRO, config, contents);
         return { text: res.text };
     } catch (error) {
         console.error("Gemini Subversive Error:", error);
@@ -221,13 +257,14 @@ export const generateAuditAnalysis = async (segment: StorySegment, state: Engine
         const config: any = {
             systemInstruction: AUDIT_INSTRUCTION,
             temperature: 0.5,
-            maxOutputTokens: 8192
+            maxOutputTokens: 8192,
+            thinkingLevel: ThinkingLevel.HIGH
         };
         if (schema) {
             config.responseMimeType = "application/json";
             config.responseSchema = schema;
         }
-        const res = await callGemini(ai, MODEL_FLASH_LITE, config, contents);
+        const res = await callGemini(ai, MODEL_PRO, config, contents);
         return { text: res.text };
     } catch (error) {
         console.error("Gemini Auditor Error:", error);
@@ -252,10 +289,11 @@ export const generateCorrection = async (prose: string, flags: AuditFlag[]): Pro
     }];
 
     try {
-        const res = await callGemini(ai, MODEL_FLASH_LITE, {
+        const res = await callGemini(ai, MODEL_PRO, {
             systemInstruction: CORRECTION_INSTRUCTION,
             temperature: 0.7,
-            maxOutputTokens: 8192
+            maxOutputTokens: 8192,
+            thinkingLevel: ThinkingLevel.HIGH
         }, contents);
         return { text: res.text };
     } catch (error) {

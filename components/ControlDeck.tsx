@@ -1,9 +1,9 @@
-import React, { useState, KeyboardEvent } from 'react';
-import { Send, Play, Terminal, ChevronDown, History } from 'lucide-react';
+import React, { useState, KeyboardEvent, useRef } from 'react';
+import { Send, Play, Terminal, ChevronDown, History, Image as ImageIcon, X } from 'lucide-react';
 import { NarrativeMode, GenerationStage } from '../types';
 
 interface ControlDeckProps {
-  onSend: (text: string) => void;
+  onSend: (text: string, image?: string) => void;
   onFlashback?: () => void;
   isLoading: boolean;
   generationStage: GenerationStage;
@@ -26,12 +26,31 @@ const ControlDeck: React.FC<ControlDeckProps> = ({
   onGenreChange
 }) => {
   const [input, setInput] = useState('');
+  const [image, setImage] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleSend = () => {
     if (isLoading) return;
-    // Allow empty input to act as a "Continue" command
-    onSend(input);
+    // Allow empty input to act as a "Continue" command if no image
+    onSend(input, image || undefined);
     setInput('');
+    setImage(null);
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImage(reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const removeImage = () => {
+    setImage(null);
+    if (fileInputRef.current) fileInputRef.current.value = '';
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
@@ -162,6 +181,22 @@ const ControlDeck: React.FC<ControlDeckProps> = ({
 
       <div className="max-w-3xl mx-auto flex gap-4 items-end">
         <div className="flex-1 bg-slate-900 border border-slate-700 rounded-lg overflow-hidden focus-within:ring-1 focus-within:ring-blue-500 focus-within:border-blue-500 transition-all shadow-inner relative">
+          {image && (
+            <div className="p-2 bg-slate-800/50 border-b border-slate-700 flex items-center gap-3 animate-in fade-in slide-in-from-top-1">
+              <div className="relative group">
+                <img src={image} alt="Upload preview" className="h-12 w-12 object-cover rounded border border-slate-600" />
+                <button 
+                  onClick={removeImage}
+                  className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full p-0.5 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <X size={10} />
+                </button>
+              </div>
+              <div className="text-[10px] font-mono text-slate-400 uppercase tracking-tight">
+                Visual Context Attached
+              </div>
+            </div>
+          )}
           <textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -170,16 +205,33 @@ const ControlDeck: React.FC<ControlDeckProps> = ({
             className={`w-full bg-transparent border-none p-3 text-slate-200 placeholder-slate-500 focus:ring-0 resize-none font-mono text-sm h-14 md:h-16 transition-opacity ${isLoading ? 'opacity-50' : 'opacity-100'}`}
             disabled={isLoading}
           />
-          {hasStarted && (
+          <div className="absolute right-2 top-2 flex items-center gap-2">
+            <input 
+              type="file" 
+              ref={fileInputRef} 
+              onChange={handleFileChange} 
+              accept="image/*" 
+              className="hidden" 
+            />
             <button
-              onClick={onFlashback}
+              onClick={() => fileInputRef.current?.click()}
               disabled={isLoading}
-              title="Trigger Flashback (Topology Expansion)"
-              className="absolute right-2 top-2 p-1.5 rounded bg-slate-800 text-slate-400 hover:text-blue-400 hover:bg-slate-700 transition-all border border-slate-700"
+              title="Attach Visual Context (Mind Map, Reference, etc.)"
+              className={`p-1.5 rounded transition-all border ${image ? 'bg-blue-600/20 text-blue-400 border-blue-500' : 'bg-slate-800 text-slate-400 hover:text-blue-400 hover:bg-slate-700 border-slate-700'}`}
             >
-              <History size={14} />
+              <ImageIcon size={14} />
             </button>
-          )}
+            {hasStarted && (
+              <button
+                onClick={onFlashback}
+                disabled={isLoading}
+                title="Trigger Flashback (Topology Expansion)"
+                className="p-1.5 rounded bg-slate-800 text-slate-400 hover:text-blue-400 hover:bg-slate-700 transition-all border border-slate-700"
+              >
+                <History size={14} />
+              </button>
+            )}
+          </div>
         </div>
         
         <button

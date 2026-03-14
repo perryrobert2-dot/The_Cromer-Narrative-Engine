@@ -1,6 +1,6 @@
 import React from 'react';
 import { Type } from "@google/genai";
-import { EngineState, StorySegment, Blueprint, SubversiveAnalysis, NarrativeMode, GenerationStage } from '../types';
+import { EngineState, StorySegment, Blueprint, SubversiveAnalysis, NarrativeMode, GenerationStage, NarrativeIntent, AxiomDefinition } from '../types';
 import { CORE_BANNED_TERMS, MODEL_FLASH_LITE, MODEL_NAME } from '../constants';
 import { getSystemInstruction, ARCHITECT_INSTRUCTION, REBUILD_INSTRUCTION, getComputeInstruction, FLASHBACK_INSTRUCTION, FLASHBACK_SCHEMA } from '../src/constants/prompts';
 import { getInitialPhysics } from '../src/constants/cartridges';
@@ -20,6 +20,7 @@ interface UseCromerActionsProps {
   setIsLoading: (loading: boolean) => void;
   generationStage: GenerationStage;
   setGenerationStage: (stage: GenerationStage) => void;
+  setNarrativeMode: (mode: NarrativeMode) => void;
   updateEngineState: (state: Partial<EngineState>) => void;
   stopSpeaking: () => void;
   pendingTurn: { segment: StorySegment, targetState: EngineState } | null;
@@ -36,6 +37,7 @@ export function useCromerActions({
   setIsLoading,
   generationStage,
   setGenerationStage,
+  setNarrativeMode,
   updateEngineState,
   stopSpeaking,
   pendingTurn,
@@ -97,20 +99,26 @@ export function useCromerActions({
     }));
   };
 
-  const handleInteraction = async (input: string) => {
+  const handleInteraction = async (input: string, image?: string) => {
     setIsLoading(true);
     setGenerationStage('IDLE');
     stopSpeaking();
 
     let effectiveInput = input;
-    if (!effectiveInput.trim()) {
+    if (!effectiveInput.trim() && !image) {
         effectiveInput = segments.length === 0 
             ? "Begin story initialization." 
             : "Continue the narrative.";
     }
 
-    if (input.trim()) {
-      const userSeg: StorySegment = { id: Date.now().toString() + '-user', role: 'user', text: input, timestamp: Date.now() };
+    if (input.trim() || image) {
+      const userSeg: StorySegment = { 
+        id: Date.now().toString() + '-user', 
+        role: 'user', 
+        text: input, 
+        image: image,
+        timestamp: Date.now() 
+      };
       setSegments(prev => [...prev, userSeg]);
     }
 
@@ -140,7 +148,10 @@ export function useCromerActions({
         effectiveInput,
         historyForCompute,
         narrativeMode,
-        setGenerationStage
+        setGenerationStage,
+        false,
+        false,
+        image
       );
 
       const { targetState, content, thought, usage, blueprint, auditFlags, deltaDebt, criticSuggestion } = result;
@@ -345,6 +356,101 @@ export function useCromerActions({
     setGenerationStage('IDLE');
   };
 
+  const handleInitialize = async (config: {
+    genre: string;
+    intent: NarrativeIntent;
+    axioms: AxiomDefinition;
+    grand_objective: string;
+    pillars: string[];
+    initial_prompt: string;
+    mode: NarrativeMode;
+    antagonistMirroring: boolean;
+    voice: string;
+    style: string;
+    density: number;
+    temperature: number;
+    abstractness: number;
+    image?: string;
+  }) => {
+    setIsLoading(true);
+    setGenerationStage('ARCHITECT');
+    setNarrativeMode(config.mode);
+    stopSpeaking();
+
+    try {
+      // 1. Set initial state based on wizard
+      const initialState: Partial<EngineState> = {
+        GENRE: config.genre,
+        INTENT: config.intent,
+        AXIOMS: config.axioms,
+        PILLARS: config.pillars,
+        GRAND_OBJECTIVE: config.grand_objective,
+        AESTHETICS: {
+          STYLE: config.style,
+          VOICE: {
+            primary: config.voice,
+            density: config.density,
+            metaphorFrequency: config.density * 0.5, // Derived
+            temperature: config.temperature,
+            abstractness: config.abstractness
+          }
+        },
+        PHYSICS: {
+          ...getInitialPhysics(),
+          primary_resource: { label: config.axioms.currency, value: 0, description: 'Initial state' },
+          environmental_friction: { label: config.axioms.friction, value: 0.5, description: 'Initial state' },
+          protagonist_integrity: { label: config.axioms.secondaryCurrency || 'Integrity', value: 1.0, description: 'Initial state' },
+        }
+      };
+
+      // 2. Run Pipeline with ARCHITECT focus
+      const result = await TurnPipeline.run(
+        { ...engineState, ...initialState },
+        config.initial_prompt,
+        [], // No history yet
+        config.mode,
+        setGenerationStage,
+        true, // isInitialization
+        config.antagonistMirroring,
+        config.image
+      );
+
+      const { targetState, content, thought, usage, blueprint, auditFlags } = result;
+
+      const botSegmentId = Date.now().toString() + '-init';
+      const fullState = { ...engineState, ...initialState, ...targetState };
+      
+      const botSegment: StorySegment = {
+        id: botSegmentId,
+        role: 'model',
+        text: content,
+        thought: thought,
+        state: fullState,
+        blueprint: blueprint,
+        usage: usage,
+        timestamp: Date.now()
+      };
+
+      updateEngineState({ ...initialState, ...targetState });
+      setSegments([botSegment]);
+
+      if (auditFlags.length > 0) {
+        const enrichedFlags = auditFlags.map(flag => ({
+            ...flag, id: crypto.randomUUID(), segmentId: botSegmentId, timestamp: Date.now()
+        }));
+        setEngineState(prev => ({ ...prev, AUDIT_LOG: [...(prev.AUDIT_LOG || []), ...enrichedFlags] }));
+      }
+    } catch (error: any) {
+      console.error("Initialization failed", error);
+      setGenerationStage('ERROR');
+    } finally {
+      setIsLoading(false);
+      if (generationStage !== 'ERROR') {
+        setGenerationStage('IDLE');
+      }
+    }
+  };
+
   return {
     handleApplyBlueprint,
     handleInteraction,
@@ -352,6 +458,7 @@ export function useCromerActions({
     handleFlashback,
     handleAcceptSuggestion,
     handleRejectSuggestion,
-    handleRequestRewrite
+    handleRequestRewrite,
+    handleInitialize
   };
 }

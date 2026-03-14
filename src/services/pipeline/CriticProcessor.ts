@@ -1,6 +1,7 @@
-import { Type } from "@google/genai";
+import { Type, ThinkingLevel } from "@google/genai";
 import { EngineState, StorySegment, CriticSuggestion, CriticState } from '../../../types';
 import { generateNextSegment } from '../../../services/gemini';
+import { MODEL_PRO } from '../../../constants';
 import { parseResponse } from '../../utils/parser';
 
 const CRITIC_LENSES = [
@@ -68,11 +69,12 @@ The edit should be a direct replacement for a part of the text.
       [], 
       undefined, 
       "You are the Subversive Critic. Your goal is to offer genuine, high-quality alternatives to the current narrative path. Do not be repetitive. Do not fixate on one theme.\n" + criticPrompt,
-      undefined,
+      MODEL_PRO,
       {
         responseMimeType: "application/json",
         responseSchema: CRITIC_SCHEMA,
-        temperature: 0.8
+        temperature: 0.8,
+        thinkingLevel: ThinkingLevel.HIGH
       }
     );
 

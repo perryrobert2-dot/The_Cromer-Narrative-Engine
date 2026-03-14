@@ -1,6 +1,6 @@
-import { Type } from "@google/genai";
+import { Type, ThinkingLevel } from "@google/genai";
 import { EngineState, StorySegment, NarrativeMode, Blueprint, TokenUsage, AuditFlag, GenerationStage, PhysicsPayload } from '../../../types';
-import { CORE_BANNED_TERMS, MODEL_NAME } from '../../../constants';
+import { CORE_BANNED_TERMS, MODEL_NAME, MODEL_PRO } from '../../../constants';
 import { ARCHITECT_INSTRUCTION } from '../../constants/prompts';
 import { generateNextSegment, initializeNarrativePhysics } from '../../../services/gemini';
 import { parseResponse } from '../../utils/parser';
@@ -32,6 +32,7 @@ const ARCHITECT_SCHEMA = {
       type: Type.OBJECT,
       properties: {
         PHASE: { type: Type.STRING },
+        PHASE_TICKS: { type: Type.NUMBER },
         GENRE: { type: Type.STRING },
         INTENT: { type: Type.STRING },
         AESTHETICS: {
@@ -43,9 +44,21 @@ const ARCHITECT_SCHEMA = {
               properties: {
                 primary: { type: Type.STRING },
                 density: { type: Type.NUMBER },
-                metaphorFrequency: { type: Type.NUMBER }
+                metaphorFrequency: { type: Type.NUMBER },
+                temperature: { type: Type.NUMBER },
+                abstractness: { type: Type.NUMBER }
               }
             }
+          }
+        },
+        FAIL_SAFES: {
+          type: Type.OBJECT,
+          properties: {
+            STALL_PROTECTION: { type: Type.STRING },
+            MAX_PHASE_DURATION: { type: Type.NUMBER },
+            LOOP_PENALTY: { type: Type.STRING },
+            TRANSITION_PRIORITY: { type: Type.ARRAY, items: { type: Type.STRING } },
+            OVERRIDE_CONDITION: { type: Type.STRING }
           }
         },
         CURRENT_GOAL: { type: Type.STRING },
@@ -74,27 +87,44 @@ export class TurnPipeline {
     effectiveInput: string,
     historyForCompute: StorySegment[],
     narrativeMode: NarrativeMode,
-    onStageChange: (stage: GenerationStage) => void
+    onStageChange: (stage: GenerationStage) => void,
+    forceInitialization: boolean = false,
+    antagonistMirroring: boolean = false,
+    image?: string
   ): Promise<PipelineResult> {
     
-    const isInitialization = historyForCompute.length === 0 || engineState.PHASE.includes('0 - Initialization');
+    const isInitialization = forceInitialization || historyForCompute.length === 0 || engineState.PHASE.includes('0 - Initialization');
 
     if (isInitialization) {
-      // Step 1: Dynamic Physics Initialization
-      onStageChange('CALCULATOR'); // Reusing CALCULATOR stage for physics init
-      const { physics, banned_terms } = await initializeNarrativePhysics(effectiveInput, engineState.GENRE, engineState.AXIOMS);
+      // Step 1: Dynamic Physics Initialization (Only if not already provided by wizard)
+      let physics = engineState.PHYSICS;
+      let banned_terms: string[] = engineState.BANNED_TERMS || [];
+
+      if (!forceInitialization) {
+        onStageChange('CALCULATOR');
+        const initRes = await initializeNarrativePhysics(effectiveInput, engineState.GENRE, engineState.AXIOMS);
+        physics = initRes.physics;
+        banned_terms = initRes.banned_terms;
+      }
 
       // Step 2: Architect Phase
       onStageChange('ARCHITECT');
+      const architectPrompt = ARCHITECT_INSTRUCTION + 
+        `\nBLACKLIST: ${[...CORE_BANNED_TERMS, ...banned_terms].join(', ')}` +
+        `\nVOICE VECTORS: Density: ${engineState.AESTHETICS.VOICE.density}, Temperature: ${engineState.AESTHETICS.VOICE.temperature}, Abstractness: ${engineState.AESTHETICS.VOICE.abstractness}` +
+        (antagonistMirroring ? "\n### ANTAGONIST MIRRORING ENABLED: Start with a visceral World-Hook (The Antagonist/Force) that contrasts with the protagonist's upcoming entry. Focus on 'Meat and Blood' vs 'Nerves and Will'." : "");
+
       const res = await generateNextSegment(
         [{ id: 'init', role: 'user', text: effectiveInput, timestamp: 0 } as StorySegment], 
         undefined, 
-        ARCHITECT_INSTRUCTION + `\nBLACKLIST: ${[...CORE_BANNED_TERMS, ...banned_terms].join(', ')}`,
-        MODEL_NAME,
+        architectPrompt,
+        MODEL_PRO,
         {
           responseMimeType: "application/json",
-          responseSchema: ARCHITECT_SCHEMA
-        }
+          responseSchema: ARCHITECT_SCHEMA,
+          thinkingLevel: ThinkingLevel.HIGH
+        },
+        image
       );
       const parsed = parseResponse(res.text);
       
@@ -162,12 +192,35 @@ export class TurnPipeline {
       );
 
       onStageChange('PATHMAKER');
+      
+      // 3. Semantic Drift Fail-safe (Loop Detection)
+      let tempOverride = undefined;
+      let blackSwanInstruction = "";
+      
+      if (historyForCompute.length >= 3) {
+        const last3 = historyForCompute.slice(-3).map(s => s.text.toLowerCase());
+        const words = last3.map(t => new Set(t.split(/\s+/)));
+        
+        // Check for common specific "stagnation" words
+        const stagnationWords = ['clinical', 'brutal', 'serrated', 'visceral', 'cold', 'metallic'];
+        const stagnationDetected = stagnationWords.some(word => 
+          last3.every(text => text.includes(word))
+        );
+
+        if (stagnationDetected) {
+          tempOverride = 0.8;
+          blackSwanInstruction = "\n### ENTROPY EVENT TRIGGERED: Vocab Stagnation Detected. You must introduce a 'Black Swan' event—a narrative element that cannot be derived from the current room or character. Shift the tone dramatically.";
+        }
+      }
+
       const { content, thought, usage, auditFlags: proseFlags } = await ProseProcessor.generate(
         targetState,
-        effectiveInput,
+        effectiveInput + blackSwanInstruction,
         historyForCompute,
         narrativeMode,
-        engineState
+        engineState,
+        image,
+        tempOverride
       );
 
       let criticSuggestion = null;

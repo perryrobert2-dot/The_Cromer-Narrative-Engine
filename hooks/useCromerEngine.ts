@@ -63,6 +63,7 @@ export function useCromerEngine({ speak, stopSpeaking, saveToDB, loadFromDB }: U
     setIsLoading,
     generationStage,
     setGenerationStage,
+    setNarrativeMode,
     updateEngineState,
     stopSpeaking,
     pendingTurn: state.pendingTurn,
@@ -134,6 +135,7 @@ export function useCromerEngine({ speak, stopSpeaking, saveToDB, loadFromDB }: U
     handleUpdateSegmentText,
     handleBranch,
     handleRestoreState,
-    handleGenerateCoverImage
+    handleGenerateCoverImage,
+    handleInitialize: actions.handleInitialize
   };
 }
